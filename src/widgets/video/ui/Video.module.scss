@@ -1,0 +1,44 @@
+.videoSection {
+  position: relative;
+  background: #0b0b0b;
+  padding-bottom: 182px;
+}
+
+.videoBlurRight {
+  position: absolute;
+  background: #6162fd;
+  width: 800px;
+  height: 930px;
+  top: -300px;
+  border-radius: 50%;
+  right: -400px;
+  opacity: 0.3;
+  filter: blur(300px);
+  z-index: 2;
+}
+
+.videoBlurLeft {
+  position: absolute;
+  background: #8d8edd;
+  width: 340px;
+  height: 394px;
+  top: -100px;
+  border-radius: 50%;
+  left: -45px;
+  opacity: 0.5;
+  filter: blur(350px);
+  z-index: 2;
+}
+
+.videoBlurDown {
+  position: absolute;
+  background: #6162fd;
+  width: 575px;
+  height: 668px;
+  bottom: -200px;
+  border-radius: 50%;
+  left: -47px;
+  opacity: 0.5;
+  filter: blur(300px);
+  z-index: 2;
+}

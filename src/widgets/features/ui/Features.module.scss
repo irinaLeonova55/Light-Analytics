@@ -1,0 +1,84 @@
+.features {
+  padding-top: 60px;
+  position: relative;
+  background: #0b0b0b;
+  width: 100%;
+}
+
+.featuresWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3.3fr 4fr 2.3fr;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.featuresCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  background: #1e1d22;
+  border-radius: 22px;
+  padding: 5px;
+}
+
+.cardWindow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #141414;
+  width: 100%;
+  height: 271px;
+  opacity: 0.86;
+  border-radius: 22px;
+  padding-inline: 50px;
+  /*padding-block: 36px;*/
+}
+
+.featuresImage {
+  width: 100%;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding-inline: 17px;
+  padding-top: 33px;
+  padding-bottom: 40px;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 118%;
+  letter-spacing: -4%;
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.cardDesc {
+  font-weight: 400;
+  opacity: 0.7;
+  letter-spacing: -2%;
+  color: #ffffff;
+  font-size: 15px;
+  max-width: 80%;
+}
+
+.featuresBlur {
+  position: absolute;
+  background: #6162fd;
+  width: 384px;
+  height: 214px;
+  top: 0;
+  border-radius: 50%;
+  left: -200px;
+  opacity: 0.8;
+  filter: blur(250px);
+  z-index: 2;
+}

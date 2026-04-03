@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  background: rgba(#ffffff, 0.06);
+  background-color: #2d305b;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(57.099998474121094px);
+}
+
+.headerContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  max-width: 440px;
+  justify-content: space-between;
+  gap: 40px;
+  font-size: 15px;
+  letter-spacing: -2%;
+
+  & li a {
+    color: #ffffff;
+    opacity: 0.65;
+    font-weight: $fw-regular;
+  }
+}
+
+.logoHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 120px;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 8px;
+}

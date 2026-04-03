@@ -1,0 +1,63 @@
+.metrics {
+  position: relative;
+  background: #0b0b0b;
+}
+
+.metricsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+}
+
+.metricCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  min-height: 330px;
+  z-index: 1;
+  border-radius: 22px;
+  padding: 40px 20px;
+  color: #ffffff;
+}
+
+.cardWhite {
+  background: rgba(#ffffff, 0.1);
+}
+
+.cardBlue {
+  background: #6162fd;
+}
+
+.metricCounter {
+  font-weight: $fw-regular;
+  font-size: 65px;
+  line-height: 100%;
+  letter-spacing: -6%;
+}
+
+.metricText {
+  display: inline-block;
+  font-weight: $fw-regular;
+  letter-spacing: -2%;
+  max-width: 150px;
+  word-wrap: break-word;
+  z-index: 3;
+  font-size: 15px;
+}
+
+.metricsBlur {
+  position: absolute;
+  background: #6162fd;
+  width: 600px;
+  height: 600px;
+  top: 0;
+  border-radius: 50%;
+  right: -200px;
+  left: auto;
+  transform: translateX(50px);
+  opacity: 0.8;
+  filter: blur(300px);
+  z-index: 2;
+}

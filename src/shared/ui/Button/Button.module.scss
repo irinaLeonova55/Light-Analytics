@@ -1,0 +1,32 @@
+.btn {
+  &.littleGrey {
+    width: 67px;
+    height: 30px;
+    color: #ffffff;
+    background: rgba(#ffffff, 0.17);
+    border-radius: 5px;
+
+    gap: 10px;
+    font-weight: $fw-semibold;
+    font-size: 13px;
+    line-height: 135%;
+    letter-spacing: -2%;
+    text-align: center;
+  }
+
+  &.littleWhite {
+    width: 114px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 5px;
+    padding-block: 6px;
+    padding-inline: 18px;
+    gap: 10px;
+    font-weight: $fw-regular;
+    font-size: 13px;
+    line-height: 135%;
+    letter-spacing: -2%;
+    text-align: center;
+    color: #0b0b0b;
+  }
+}

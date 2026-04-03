@@ -1,0 +1,80 @@
+.sellers {
+  background: #f5f6fb;
+}
+
+.sellersCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sellersItemText {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background: #efefef;
+  padding: 40px;
+  width: 100%;
+  height: auto;
+  border-radius: 26px;
+}
+
+.sellersImg {
+  width: 33px;
+  height: auto;
+}
+
+.sellersTitle {
+  max-width: 480px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 111%;
+  letter-spacing: -5%;
+  color: #1a1a1a;
+  margin-top: 58px;
+  margin-bottom: 110px;
+}
+
+.sellerDesc {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 135%;
+  letter-spacing: -2%;
+  color: #0b0b0b;
+}
+
+.sellerImgUp {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding: 40px;
+  width: 100%;
+  height: auto;
+  border-radius: 26px;
+  padding-top: 40px;
+  padding-left: 30px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+}
+
+.advantageItem {
+  width: fit-content;
+  height: 40;
+  border-radius: 66px;
+  padding-block: 10px;
+  padding-inline: 20px;
+  border: 1px solid rgba(#ffffff, 0.34);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: -3%;
+  color: #ffffff;
+}

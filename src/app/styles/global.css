@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url(/src/shared/assets/fonts/Manrope-Regular.woff2);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url(/src/shared/assets/fonts/Manrope-Medium.woff2);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url(/src/shared/assets/fonts/Manrope-SemiBold.woff2);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+  font-display: swap;
+}
+
+html {
+  user-select: none;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: #f7f9fb;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/*h1 {
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+  
+widgets
+ ├ header
+ ├ hero
+ ├ video
+ ├ features
+ ├ platform
+ ├ pricing
+ ├ metrics
+ ├ accuracy
+ ├ signup
+ ├ sellers
+ ├ marketplaces
+ ├ testimonials
+ ├ faq
+ └ footer*/
