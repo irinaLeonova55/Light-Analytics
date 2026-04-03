@@ -1,5 +1,6 @@
 .sellers {
   background: #f5f6fb;
+  padding-bottom: 175px;
 }
 
 .sellersCards {
@@ -16,6 +17,7 @@
   width: 100%;
   height: auto;
   border-radius: 26px;
+  min-height: 421px;
 }
 
 .sellersImg {
@@ -34,7 +36,7 @@
   margin-bottom: 110px;
 }
 
-.sellerDesc {
+.sellersDesc {
   font-weight: 400;
   font-size: 15px;
   line-height: 135%;
@@ -43,6 +45,7 @@
 }
 
 .sellerImgUp {
+  position: relative;
   display: flex;
   justify-content: start;
   align-items: start;
@@ -52,6 +55,7 @@
   border-radius: 26px;
   padding-top: 40px;
   padding-left: 30px;
+  min-height: 421px;
 }
 
 .block {
@@ -75,6 +79,68 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 100%;
+  letter-spacing: -3%;
+  color: #ffffff;
+}
+
+.sellersFigure {
+  position: absolute;
+  width: 553px;
+  height: auto;
+  right: -125px;
+  top: -90px;
+}
+
+.sellerImgDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-radius: 26px;
+  min-height: 421px;
+}
+
+.triangleWrapper {
+  position: relative;
+  max-width: 380px;
+}
+
+.triangle {
+  max-width: 380px;
+  height: auto;
+}
+
+.accuracy {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 135%;
+  letter-spacing: -3%;
+  color: #ffffff;
+}
+
+.control {
+  position: absolute;
+  bottom: -30px;
+  left: -20px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 135%;
+  letter-spacing: -3%;
+  color: #ffffff;
+}
+
+.speed {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 135%;
   letter-spacing: -3%;
   color: #ffffff;
 }
