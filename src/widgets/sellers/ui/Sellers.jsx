@@ -33,9 +33,9 @@ const Sellers = () => {
               alt="Стрелка"
               className={styles.sellersImg}
             />
-            <div className={styles.sellersTitle}>
+            <h3 className={styles.sellersTitle}>
               Управляете бизнесом, а не просто смотрите отчёты
-            </div>
+            </h3>
             <p className={styles.sellersDesc}>
               Планируйте продажи, моделируйте сценарии «что если», контролируйте
               финансы и масштабируйте прибыль — всё в одной системе без Excel и
@@ -97,9 +97,9 @@ const Sellers = () => {
               alt="Стрелка"
               className={styles.sellersImg}
             />
-            <div className={styles.sellersTitle}>
+            <h3 className={styles.sellersTitle}>
               Видите чистую прибыль по каждому товару каждый день
-            </div>
+            </h3>
             <p className={styles.sellersDesc}>
               Не оборот, не “грязную” маржу, а реальную чистую прибыль с учетом
               комиссий, логистики, хранения и всех дополнительных расходов.

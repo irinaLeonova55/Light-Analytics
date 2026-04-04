@@ -1,0 +1,60 @@
+.ctaOne {
+  position: relative;
+  background: #0b0b0b;
+  padding-top: 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ctaOneContent {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.ctaOneHeadline {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 96%;
+  letter-spacing: -4%;
+  text-align: center;
+  color: #ffffff;
+  z-index: 20;
+}
+
+.ctaOneBtnWrapper {
+  display: flex;
+  gap: 7px;
+  height: 50px;
+  z-index: 20;
+}
+
+.mockupViewport {
+  position: relative;
+  overflow: hidden;
+  height: 440px;
+}
+
+.mockupImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.ctaOneEllipse {
+  position: absolute;
+  width: 1897px;
+  height: 550px;
+  border-radius: 50%;
+  background: #6162fd;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  filter: blur(241px);
+}

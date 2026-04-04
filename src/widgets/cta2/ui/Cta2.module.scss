@@ -1,0 +1,77 @@
+.ctaTwo {
+  position: relative;
+  background: #0b0b0b;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ctaTwoWrapper {
+  padding-top: 188px;
+  padding-bottom: 308px;
+  width: 100%;
+  position: relative;
+}
+
+.ctaTwoContent {
+  z-index: 20;
+}
+
+.ctaTwoHeadline {
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 96%;
+  letter-spacing: -4%;
+  color: #ffffff;
+  max-width: 710px;
+  margin-bottom: 33px;
+  z-index: 30;
+}
+
+.headlineColor {
+  display: inline-block;
+  background: #6162fd;
+  max-height: 60px;
+  border-radius: 10px;
+  padding-inline: 5px;
+  padding-bottom: 5px;
+  z-index: 20;
+  color: #ffffff;
+}
+
+.ctaTwoBtnWrapper {
+  display: flex;
+  gap: 7px;
+  height: 50px;
+  z-index: 20;
+}
+
+.cpaTwoImg {
+  position: absolute;
+  max-width: 1064px;
+  height: auto;
+  bottom: 0;
+  right: -150px;
+  z-index: 5;
+}
+
+.ctaTwoGradient {
+  position: absolute;
+  background: #000;
+  background: linear-gradient(180deg, rgba(11, 11, 11, 0) 0%, #0b0b0b 100%);
+  width: 100%;
+  height: 261px;
+  bottom: 0;
+  z-index: 11;
+}
+
+.ctaTwoEllipse {
+  position: absolute;
+  width: 1897px;
+  height: 507px;
+  border-radius: 50%;
+  left: -207px;
+  background: #6162fd;
+  filter: blur(241px);
+  bottom: -300px;
+  z-index: 4;
+}

@@ -29,4 +29,56 @@
     text-align: center;
     color: #0b0b0b;
   }
+
+  &.largeWhite {
+    min-width: 200px;
+    min-height: 50px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding-block: 15px;
+    padding-inline: 24px;
+    color: #0b0b0b;
+    z-index: 20;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 135%;
+    letter-spacing: -2%;
+    text-align: center;
+  }
+
+  &.transparent {
+    min-width: 265px;
+    height: 50px;
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-right: 24px;
+    padding-bottom: 15px;
+    padding-left: 24px;
+    background: #ffffff08;
+    border: 1px solid #ffffff75;
+    font-family: Manrope;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 111%;
+    letter-spacing: -5%;
+    text-align: center;
+    color: #ffffff;
+    z-index: 20;
+  }
+  &.largePurple {
+    min-width: 263px;
+    height: 50px;
+    border-radius: 8px;
+    padding-top: 15px;
+    padding-right: 24px;
+    padding-bottom: 15px;
+    padding-left: 24px;
+    background: #6162fd;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 135%;
+    letter-spacing: -2%;
+    text-align: center;
+    color: #ffffff;
+  }
 }

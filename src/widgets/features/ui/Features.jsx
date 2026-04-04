@@ -44,8 +44,8 @@ const Features = () => {
                 />
               </div>
               <div className={styles.textWrapper}>
-                <span className={styles.cardTitle}>{feature.title}</span>
-                <span className={styles.cardDesc}>{feature.desc}</span>
+                <h3 className={styles.cardTitle}>{feature.title}</h3>
+                <p className={styles.cardDesc}>{feature.desc}</p>
               </div>
             </div>
           ))}
