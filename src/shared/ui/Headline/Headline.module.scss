@@ -1,12 +1,27 @@
+.headlineWrapper {
+  width: 100%;
+  background: #000;
+}
+
 .headline {
   display: flex;
   max-width: 755px;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   padding-top: 100px;
-  padding-bottom: 86px;
+  padding-bottom: 66px;
+}
+
+.center {
+  align-items: center;
   margin: 0 auto;
+  text-align: center;
+}
+
+.left {
+  align-items: start;
+  display: flex;
+  justify-content: start;
 }
 
 .supertitle {
@@ -28,10 +43,14 @@
   font-weight: $fw-medium;
   line-height: $lh-heading;
   letter-spacing: -4%;
-  text-align: center;
+  /*text-align: center;*/
   color: #ffffff;
   padding-top: 10px;
   padding-bottom: 25px;
+}
+
+.textLeft {
+  text-align: left;
 }
 
 .desc {
@@ -66,6 +85,10 @@
   color: #0b0b0b;
   padding-top: 10px;
   padding-bottom: 25px;
+}
+
+.textLeft {
+  text-align: left;
 }
 
 .descLight {

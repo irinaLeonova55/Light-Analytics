@@ -1,22 +1,42 @@
 import styles from './Headline.module.scss';
 
-const Headline = ({ supertitle, title, desc, light }) => {
+/*const Headline = ({ supertitle, title, desc, light, align = 'center' }) => {
   return (
-    <>
-      {light ? (
-        <div className={styles.headline}>
-          <div className={styles.supertitleLight}>{supertitle}</div>
-          <h2 className={styles.titleLight}>{title}</h2>
-          <p className={styles.descLight}>{desc}</p>
+    <div
+      className={`${styles.headlineWrapper} ${
+        align === 'left' ? styles.headlineLeft : styles.headlineCenter
+      }}`}
+    >
+      <div className={styles.headline}>
+        <div className={light ? styles.supertitleLight : styles.supertitle}>
+          {supertitle}
         </div>
-      ) : (
-        <div className={styles.headline}>
-          <div className={styles.supertitle}>{supertitle}</div>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.desc}>{desc}</p>
-        </div>
-      )}
-    </>
+        <h2 className={light ? styles.titleLight : styles.title}>{title}</h2>
+        <p className={light ? styles.descLight : styles.desc}>{desc}</p>
+      </div>
+    </div>
+  );
+};*/
+
+const Headline = ({ supertitle, title, desc, light, align = 'center' }) => {
+  return (
+    <div
+      className={`${styles.headline} ${
+        align === 'center' ? styles.center : styles.left
+      }`}
+    >
+      <div className={light ? styles.supertitleLight : styles.supertitle}>
+        {supertitle}
+      </div>
+
+      <h2
+        className={`${light ? styles.titleLight : styles.title} ${align === 'left' ? styles.textLeft : ''}`}
+      >
+        {title}
+      </h2>
+
+      <p className={light ? styles.descLight : styles.desc}>{desc}</p>
+    </div>
   );
 };
 

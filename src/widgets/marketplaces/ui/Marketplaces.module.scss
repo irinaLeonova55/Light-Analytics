@@ -1,0 +1,76 @@
+.marketplaces {
+  padding-inline: 8px;
+}
+
+.marketplacesWrapper {
+  position: relative;
+
+  margin: 0 auto;
+  background: #ffffff;
+  max-width: 1620px;
+  padding-bottom: 162px;
+  border-radius: 21px;
+  padding-top: 30px;
+}
+
+.marketplacesSteps {
+  list-style: none;
+  max-width: 427px;
+}
+
+.marketplacesStep {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  gap: 34px;
+  padding-left: 60px;
+  margin-bottom: 35px;
+
+  &::after {
+    content: '';
+    position: absolute;
+
+    left: 13px;
+    top: 36px;
+
+    width: 2px;
+    height: calc(100% + 20px);
+
+    border-left: 2px dashed #d6d6d6;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+.stepText {
+  color: #0b0b0b;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 135%;
+  letter-spacing: -3%;
+}
+
+.stepNumber {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 13px;
+  background: #6162fd;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+
+.marketplacesImg {
+  position: absolute;
+  width: 896px;
+  height: auto;
+  top: 150px;
+  right: 63px;
+}

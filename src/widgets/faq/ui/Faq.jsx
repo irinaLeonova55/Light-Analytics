@@ -49,7 +49,11 @@ const Faq = () => {
     <section className={styles.faq}>
       <div className={styles.faqWrapper}>
         <Container size="narrow">
-          <Headline supertitle="FAQ" title="Часто задаваемые вопросы" />
+          <Headline
+            supertitle="FAQ"
+            title="Часто задаваемые вопросы"
+            align="center"
+          />
           <div className={styles.faqContent}>
             {questions.map((question) => {
               const active = faqOpen === question.id;

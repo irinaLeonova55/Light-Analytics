@@ -31,7 +31,11 @@ const Features = () => {
   return (
     <section className={styles.features}>
       <Container size="cards">
-        <Headline supertitle="Функции" title="Мы точные и быстрые" />
+        <Headline
+          supertitle="Функции"
+          title="Мы точные и быстрые"
+          align="center"
+        />
 
         <div className={styles.featuresWrapper}>
           {features.map((feature) => (
