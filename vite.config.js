@@ -13,9 +13,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Файл будет автоматически добавляться в начало каждого вашего scss-файла
-        additionalData: `@use "@/app/styles/variables.scss" as *;
-        @use "@/app/styles/mixins.scss" as *;`,
+        additionalData: `@use "@/app/styles/variables.scss" as *;`,
       },
     },
   },

@@ -1,6 +1,6 @@
 .sellers {
   background: #f5f6fb;
-  padding-bottom: 175px;
+  padding-bottom: 11rem;
 }
 
 .sellersCards {
@@ -13,7 +13,7 @@
   flex-direction: column;
   justify-content: start;
   background: #efefef;
-  padding: 40px;
+  padding: 2.5rem;
   width: 100%;
   height: auto;
   border-radius: 26px;
@@ -32,8 +32,8 @@
   line-height: 111%;
   letter-spacing: -5%;
   color: #1a1a1a;
-  margin-top: 58px;
-  margin-bottom: 110px;
+  margin-top: 3.5rem;
+  margin-bottom: 7rem;
 }
 
 .sellersDesc {
@@ -49,12 +49,10 @@
   display: flex;
   justify-content: start;
   align-items: start;
-  padding: 40px;
+  padding: 2.5rem;
   width: 100%;
   height: auto;
   border-radius: 26px;
-  padding-top: 40px;
-  padding-left: 30px;
   min-height: 421px;
 }
 
@@ -71,10 +69,10 @@
 
 .advantageItem {
   width: fit-content;
-  height: 40;
+  height: 40px;
   border-radius: 66px;
-  padding-block: 10px;
-  padding-inline: 20px;
+  padding-block: 0.75rem;
+  padding-inline: 1.25rem;
   border: 1px solid rgba(#ffffff, 0.34);
   font-weight: 500;
   font-size: 15px;

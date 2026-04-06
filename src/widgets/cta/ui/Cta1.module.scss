@@ -1,7 +1,7 @@
 .ctaOne {
   position: relative;
   background: #0b0b0b;
-  padding-top: 100px;
+  padding-top: 6.25rem;
   overflow: hidden;
   z-index: 1;
 }
@@ -9,10 +9,10 @@
 .ctaOneContent {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
 }
 
 .ctaOneHeadline {
@@ -27,7 +27,7 @@
 
 .ctaOneBtnWrapper {
   display: flex;
-  gap: 7px;
+  gap: 0.5rem;
   height: 50px;
   z-index: 20;
 }
