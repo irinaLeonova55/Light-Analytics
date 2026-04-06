@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 import styles from './Faq.module.scss';
 import Container from '@/shared/ui/Container/Container';
@@ -49,11 +49,7 @@ const Faq = () => {
     <section className={styles.faq}>
       <div className={styles.faqWrapper}>
         <Container size="narrow">
-          <Headline
-            supertitle="FAQ"
-            title="Часто задаваемые вопросы"
-            align="center"
-          />
+          <Headline supertitle="FAQ" title="Часто задаваемые вопросы" />
           <div className={styles.faqContent}>
             {questions.map((question) => {
               const active = faqOpen === question.id;

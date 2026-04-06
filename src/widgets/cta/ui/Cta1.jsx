@@ -6,7 +6,7 @@ import mockup from '@/shared/assets/images/mockup.png';
 const Cta1 = () => {
   return (
     <section className={styles.ctaOne}>
-      <Container size="mockup">
+      <Container size="narrow">
         <div className={styles.ctaOneContent}>
           <h2 className={styles.ctaOneHeadline}>
             Сейчас самое лучшее время попробовать бесплатный 14-ти дневный

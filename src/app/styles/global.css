@@ -36,8 +36,11 @@ html {
 body {
   font-family: 'Manrope', sans-serif;
   background: #f7f9fb;
-  font-size: 1.5rem;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 135%;
+  font-family: Manrope;
+  letter-spacing: -2%;
+
   margin: 0 auto;
   overflow-x: hidden;
 }

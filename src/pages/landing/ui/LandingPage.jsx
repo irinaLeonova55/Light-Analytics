@@ -1,4 +1,5 @@
 import Header from '@/widgets/header/ui/Header';
+import Pricing from '@/widgets/pricing/ui/Pricing';
 import Metrics from '@/widgets/metrics/ui/Metrics';
 import Features from '@/widgets/features/ui/Features';
 import Video from '@/widgets/video/ui/Video';
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <Header />
       <main>
         <Video />
+        <Pricing />
         <Metrics />
         <Features />
         <Sellers />
