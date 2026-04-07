@@ -17,8 +17,12 @@ const Cta1 = () => {
             <Button variant="transparent" text="Записаться на демо-встречу" />
           </div>
         </div>
-        <div class={styles.mockupViewport}>
-          <img src={mockup} class={styles.mockupImg} alt="Мокап интерфейса" />
+        <div className={styles.mockupViewport}>
+          <img
+            src={mockup}
+            className={styles.mockupImg}
+            alt="Мокап интерфейса"
+          />
         </div>
       </Container>
       <div className={styles.ctaOneEllipse} />
