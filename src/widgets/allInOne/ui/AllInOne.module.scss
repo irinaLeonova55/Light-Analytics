@@ -1,0 +1,94 @@
+.allInOne {
+  width: 100%;
+  background: #0b0b0b;
+  padding-bottom: 116px;
+}
+
+.allDiagram {
+  position: relative;
+
+  margin: 0 auto;
+  height: 970px;
+}
+
+.allCenter {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: url('@/shared/assets/icons/diagram.svg') calc(50% - 72px) top /
+    contain no-repeat;
+  width: 1072px;
+  height: 100%;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.allLogo {
+  width: 215px;
+  height: auto;
+}
+
+.allMockup {
+  width: 390px;
+  height: auto;
+}
+
+.circles {
+  position: absolute;
+  inset: 0;
+}
+
+.leftList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  left: 0;
+  top: 370px;
+  transform: translateY(-50%);
+  color: #fff;
+  width: 136px;
+
+  li:nth-child(3) {
+    transform: translateY(14px);
+  }
+
+  li:nth-child(4) {
+    transform: translateY(54px);
+  }
+
+  li:nth-child(5) {
+    transform: translateY(70px);
+  }
+}
+
+.rightList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  right: 0;
+  top: 370px;
+  transform: translateY(-50%);
+  color: #fff;
+  width: 210px;
+
+  li:nth-child(2) {
+    transform: translateY(14px);
+  }
+
+  li:nth-child(3) {
+    transform: translateY(28px);
+  }
+
+  li:nth-child(4) {
+    transform: translateY(90px);
+  }
+
+  li:nth-child(5) {
+    transform: translateY(150px);
+  }
+}

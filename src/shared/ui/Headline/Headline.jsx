@@ -25,9 +25,11 @@ const Headline = ({ supertitle, title, desc, light, align = 'center' }) => {
         align === 'center' ? styles.center : styles.left
       }`}
     >
-      <div className={light ? styles.supertitleLight : styles.supertitle}>
-        {supertitle}
-      </div>
+      {supertitle && (
+        <div className={light ? styles.supertitleLight : styles.supertitle}>
+          {supertitle}
+        </div>
+      )}
 
       <h2
         className={`${light ? styles.titleLight : styles.title} ${align === 'left' ? styles.textLeft : ''}`}
