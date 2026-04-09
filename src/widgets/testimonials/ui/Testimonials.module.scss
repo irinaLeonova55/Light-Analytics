@@ -1,0 +1,117 @@
+.reviews {
+  display: flex;
+  gap: 60px;
+  padding-bottom: 150px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 236px;
+  flex-shrink: 0;
+}
+
+.swiper {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.prev,
+.next {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e4ebf3;
+
+  img {
+    width: 24px;
+    height: auto;
+  }
+}
+
+.reviewCard {
+  display: flex;
+  width: 896px;
+  min-height: 368px;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 32px;
+}
+
+.userLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.aboutUser {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  img {
+    width: 44px;
+    height: auto;
+  }
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -3%;
+  color: #000000;
+}
+
+.userWork {
+  color: #838383;
+}
+
+.userContact {
+  display: flex;
+  flex-direction: column;
+  color: #838383;
+}
+
+.reviewRating {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .span {
+    color: #838383;
+  }
+
+  img {
+    width: 96px;
+    height: auto;
+  }
+}
+
+.reviewContent {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.purpleCard {
+  background: #6162fd;
+  color: #ffffff;
+}
+
+.white {
+  color: #ffffff;
+}
