@@ -1,5 +1,6 @@
 import Header from '@/widgets/header/ui/Header';
 import Hero from '@/widgets/hero/ui/Hero';
+import Solutions from '@/widgets/solutions/ui/Solutions';
 import AllInOne from '@/widgets/allInOne/ui/allInOne';
 import Pricing from '@/widgets/pricing/ui/Pricing';
 import Metrics from '@/widgets/metrics/ui/Metrics';
@@ -18,6 +19,7 @@ const LandingPage = () => {
       <main>
         <Hero />
         <Video />
+        <Solutions />
         <AllInOne />
         <Pricing />
         <Metrics />
