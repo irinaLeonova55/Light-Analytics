@@ -1,0 +1,140 @@
+.signup {
+  background: #0b0b0b;
+  padding-top: 3.75rem;
+  padding-bottom: 130px;
+}
+
+.signupWrapper {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #ffffff3b; // цвет линии
+    transform: translateX(-50%);
+  }
+}
+
+.signupStep {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'img txt';
+  padding-bottom: 70px;
+}
+
+.signupImgSide {
+  grid-area: img;
+  display: flex;
+  width: 100%;
+}
+
+.rightImg {
+  justify-content: end;
+}
+.signupImg {
+  position: relative;
+  max-width: 374px;
+  min-height: 300px;
+  border-radius: 19px;
+  background: #ffffff2b;
+  backdrop-filter: blur(50px);
+  overflow: hidden;
+}
+
+.imgHeader {
+  margin-top: 9px;
+  margin-left: 12px;
+}
+.signupTextSide {
+  grid-area: txt;
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 40px;
+}
+
+.signupStepBg {
+  backdrop-filter: blur(74.5px);
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.signupStepImg {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 307px;
+  height: auto;
+}
+
+.reverse {
+  grid-template-areas: 'txt img';
+}
+
+.signupText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 280px;
+  color: #ffffff;
+
+  .signupStepNumber {
+    font-weight: 600;
+    vertical-align: middle;
+    color: #6162fd;
+  }
+
+  h4 {
+    position: relative;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 111%;
+    letter-spacing: -5%;
+    vertical-align: middle;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+}
+
+.before:before {
+  position: absolute;
+  content: '';
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  left: -47px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #6162fd;
+}
+
+.after:after {
+  position: absolute;
+  content: '';
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  right: -122px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #6162fd;
+}
+
+.signupBtnWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 470px;
+  gap: 10px;
+  margin-top: 40px;
+}
