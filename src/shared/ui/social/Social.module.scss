@@ -1,0 +1,25 @@
+.socialIcons {
+  display: flex;
+  gap: 3px;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+
+    &:nth-child(1) {
+      background: #ffffff;
+    }
+
+    &:nth-child(2) {
+      background: #6162fd;
+    }
+
+    &:nth-child(3) {
+      background: #302d35;
+    }
+  }
+}

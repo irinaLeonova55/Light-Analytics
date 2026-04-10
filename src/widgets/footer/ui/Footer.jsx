@@ -1,0 +1,82 @@
+import styles from './Footer.module.scss';
+import Container from '@/shared/ui/Container/Container';
+import Button from '@/shared/ui/Button/Button';
+import Social from '@/shared/ui/social/Social';
+
+import { navLinks } from '@/shared/data/navLinks';
+import arrowUp from '@/shared/assets/icons/arrow-up.svg';
+
+import logoGradient from '@/shared/assets/icons/logo-gradient.svg';
+
+const Footer = () => {
+  const footerLinks = [
+    {
+      id: 1,
+      title: 'Навигация',
+      links: navLinks,
+    },
+    {
+      id: 2,
+      title: 'Юридические документы',
+      links: [
+        { name: 'Правила и комиссии', href: '#' },
+        { name: 'Пользовательское соглашение', href: '#' },
+      ],
+    },
+    {
+      id: 3,
+      title: 'Контакты:',
+      links: [
+        { name: 'support@gmail.com', href: '#' },
+        { name: '+7 900 900 90 90', href: '#' },
+      ],
+    },
+  ];
+
+  return (
+    <footer className={styles.footer}>
+      <Container size="cards">
+        <div className={styles.footerWrapper}>
+          <div className={styles.footerUp}>
+            <div className={styles.footerLeft}>
+              <img src={logoGradient} alt="Light Analytics" />
+              <div className={styles.footerBtnWrapper}>
+                <Button variant="largePurple" text="Создать аккаунт" />
+                <Button variant="largeWhite" text="Войти" />
+              </div>
+            </div>
+            <div className={styles.footerLinks}>
+              {footerLinks.map((column) => (
+                <div key={column.id} className={styles.navigation}>
+                  <h4 className={styles.title}>{column.title}</h4>
+
+                  <ul className={styles.footerList}>
+                    {column.links.map((link) => (
+                      <li key={link.name}>
+                        <a href={link.href}>{link.name}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <button className={styles.btnUp}>
+                <img src={arrowUp} alt="Наверх" />
+              </button>
+            </div>
+          </div>
+          <div className={styles.footerDown}>
+            <span className={styles.year}>
+              © 2026 LightAnalytics. Все права защищены
+            </span>
+            <div className={styles.socialWrapper}>
+              <Social />
+            </div>
+
+            <span className={styles.policy}>Политика конфиденциальности</span>
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
+};
+export default Footer;

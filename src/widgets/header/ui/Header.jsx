@@ -1,23 +1,17 @@
 import styles from './Header.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Button from '@/shared/ui/Button/Button';
+import Menu from '@/shared/ui/Menu/Menu';
 
 import logoWhite from '@/shared/assets/icons/logo-white.svg';
 
 const Header = () => {
-  const links = [
-    { id: 1, href: '#', name: 'Функции' },
-    { id: 2, href: '#', name: 'Преимущества' },
-    { id: 3, href: '#', name: 'План' },
-    { id: 4, href: '#', name: 'Тарифы' },
-    { id: 5, href: '#', name: 'FAQ' },
-  ];
-
   return (
     <header className={styles.header}>
       <Container size="default">
         <div className={styles.headerContainer}>
-          <nav>
+          <Menu section="menuHeader" />
+          {/*<nav>
             <ul className={styles.menu}>
               {links.map((link) => (
                 <li key={link.id}>
@@ -25,7 +19,7 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-          </nav>
+          </nav>*/}
           <div className={styles.logoHeader}>
             <img src={logoWhite} alt="Light Analitics" />
           </div>

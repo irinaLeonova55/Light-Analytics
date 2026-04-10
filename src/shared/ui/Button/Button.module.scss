@@ -31,7 +31,6 @@
   }
 
   &.largeWhite {
-    min-width: 200px;
     min-height: 50px;
     background: #ffffff;
     border-radius: 8px;
@@ -39,6 +38,7 @@
     padding-inline: 1.5rem;
     color: #0b0b0b;
     z-index: 20;
+    width: 100%;
     font-weight: 400;
     font-size: 15px;
     line-height: 135%;
@@ -63,7 +63,7 @@
     z-index: 20;
   }
   &.largePurple {
-    min-width: 263px;
+    width: 100%;
     height: 50px;
     border-radius: 8px;
     padding: 1rem 1.5rem;

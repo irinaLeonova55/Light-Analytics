@@ -1,0 +1,14 @@
+.menuHeader {
+  display: flex;
+  max-width: 440px;
+  justify-content: space-between;
+  gap: 2.5rem;
+  font-size: 15px;
+  letter-spacing: -2%;
+
+  & li a {
+    color: #ffffff;
+    opacity: 0.65;
+    font-weight: $fw-regular;
+  }
+}
