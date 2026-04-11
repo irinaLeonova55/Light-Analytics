@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import styles from './Solutions.module.scss';
 import Container from '@/shared/ui/Container/Container';
-import Integrations from '@/shared/ui/integrations/ui/Integrations';
-import DataAccuracy from '@/shared/ui/dataAccuracy/ui/DataAccuracy';
-import Balance from '@/shared/ui/balance/ui/Balance';
-import Results from '@/shared/ui/results/ui/Results';
-import Costs from '@/shared/ui/costs/ui/Costs';
-import Control from '@/shared/ui/control/ui/Control';
-import MetricsCard from '@/shared/ui/metricsCard/ui/MetricsCard';
-import Profit from '@/shared/ui/profit/ui/Profit';
+
+import integrationImg from '@/shared/assets/images/integration.png';
+import accuracyImg from '@/shared/assets/images/accuracy.png';
+import profitImg from '@/shared/assets/images/profit.png';
+import balanceImg from '@/shared/assets/images/balance.png';
+import costsImg from '@/shared/assets/images/costs.png';
+import metricsImg from '@/shared/assets/images/metric-card.png';
+import resultsImg from '@/shared/assets/images/results.png';
+import controlImg from '@/shared/assets/images/control.png';
 
 import integrationIcon from '@/shared/assets/icons/solution-integration.svg';
 import dataIcon from '@/shared/assets/icons/solutions-data.svg';
@@ -30,6 +31,7 @@ import chartsIconWhite from '@/shared/assets/icons/solutions-charts-white.svg';
 
 const Solutions = () => {
   const [tabActive, setTabActive] = useState(0);
+  const [tabOpen, setTabOpen] = useState(null);
 
   const tabs = [
     {
@@ -37,61 +39,61 @@ const Solutions = () => {
       text: 'Интеграция с Wildberries и Ozon',
       img: integrationIcon,
       imgActive: integrationIconWhite,
-      content: <Integrations />,
+      content: integrationImg,
     },
     {
       id: 2,
       text: 'Точные данные',
       img: dataIcon,
       imgActive: dataIconWhite,
-      content: <DataAccuracy />,
+      content: accuracyImg,
     },
     {
       id: 3,
       text: 'Ежедневная чистая прибыль по каждому товару',
       img: profitIcon,
       imgActive: profitIconWhite,
-      content: <Profit />,
+      content: profitImg,
     },
     {
       id: 4,
       text: 'P&L, Баланс, ДДС по лучшим мировым стандартам',
       img: balanceIcon,
       imgActive: balanceIconWhite,
-      content: <Balance />,
+      content: balanceImg,
     },
     {
       id: 5,
       text: 'Учет дополнительных расходов',
       img: costsIcon,
       imgActive: costsIconWhite,
-      content: <Costs />,
+      content: costsImg,
     },
     {
       id: 6,
       text: 'Метрики по артикулам по дням (Рука на пульсе)',
       img: metricsIcon,
       imgActive: metricsIconWhite,
-      content: <MetricsCard />,
+      content: metricsImg,
     },
     {
       id: 7,
       text: 'Прогнозирование результатов',
       img: resultsIcon,
       imgActive: resultsIconWhite,
-      content: <Results />,
+      content: resultsImg,
     },
     {
       id: 8,
       text: 'Более 50+ метрик для полного контроля бизнеса',
       img: chartsIcon,
       imgActive: chartsIconWhite,
-      content: <Control />,
+      content: controlImg,
     },
   ];
 
   return (
-    <section className={styles.solutions}>
+    <section id="solutions" className={styles.solutions}>
       <div className={styles.solutionsBg}>
         <Container size="default">
           <div className={styles.solutionsWrapper}>
@@ -116,7 +118,48 @@ const Solutions = () => {
                 ))}
               </ul>
             </div>
-            <div>{tabs[tabActive].content}</div>
+            <img className={styles.tabContent} src={tabs[tabActive].content} />
+          </div>
+
+          <div className={styles.solutionContentMobile}>
+            <h2 className={styles.solutionsHeadline}>Функции сервиса</h2>
+            {tabs.map((tab) => {
+              const active = tabOpen === tab.id;
+              return (
+                <div
+                  key={tab.id}
+                  className={`${styles.tabItem} ${active ? styles.activItem : ''}`}
+                >
+                  <button
+                    onClick={() => setTabOpen(active ? null : tab.id)}
+                    className={`${styles.solution} ${active ? styles.activItem : ''}`}
+                  >
+                    {tab.text}
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className={`${styles.tabSvg} ${active ? styles.rotate : ''}`}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    className={`${styles.imageSolutionMobile} ${active ? styles.tabOpen : ''}`}
+                  >
+                    <img className={styles.imageInner} src={tab.content} />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </div>

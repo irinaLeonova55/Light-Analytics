@@ -1,10 +1,9 @@
 .hero {
   position: relative;
   width: 100%;
-  background: #0b0b0b;
-  min-height: 100vh;
-  background: url('@/shared/assets/images/hero-bg.png') center/cover no-repeat;
-  z-index: 1;
+  min-height: 100svh;
+  background: #0b0b0b url('@/shared/assets/images/hero-bg.png') center / cover
+    no-repeat;
   overflow: hidden;
 }
 
@@ -81,15 +80,29 @@
 h1 {
   max-width: 980px;
   font-weight: 500;
-  font-size: 59px;
+  font-size: clamp(36px, 4vw, 59px);
   line-height: 96%;
   letter-spacing: -4%;
   text-align: center;
   color: #ffffff;
   margin-bottom: 0.5rem;
   z-index: 50;
-  img {
+  vertical-align: middle;
+
+  .iconDesktop {
     z-index: 10;
+    width: 50px;
+    height: auto;
+    vertical-align: -4px;
+    margin-right: 8px;
+  }
+
+  .iconMobile {
+    width: 30px;
+    height: auto;
+    vertical-align: -4px;
+    display: none;
+    margin-right: 8px;
   }
 }
 
@@ -99,6 +112,7 @@ h1 {
   color: #ffffff;
   margin-bottom: 1.5rem;
   z-index: 50;
+  text-align: center;
 }
 
 .heroBtnWrapper {
@@ -159,4 +173,50 @@ h1 {
   mix-blend-mode: Lighten;
   background: #6162fd;
   filter: blur(200px);
+}
+
+@media (max-width: 1024px) {
+  .heroContainer {
+    border: none;
+
+    &:not(:last-child)::before {
+      display: none;
+    }
+
+    &:not(:last-child)::after {
+      display: none;
+    }
+  }
+
+  .iconDesktop {
+    display: none;
+  }
+
+  .iconMobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+  }
+
+  .heroBanner {
+    display: none;
+  }
+
+  .heroBtnWrapper {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .mockupViewport {
+    position: static;
+    min-height: 200px;
+  }
+
+  .mockupImg {
+    position: static;
+  }
 }

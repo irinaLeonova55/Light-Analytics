@@ -42,3 +42,9 @@
   filter: blur(300px);
   z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .videoSection {
+    padding-bottom: 5rem;
+  }
+}

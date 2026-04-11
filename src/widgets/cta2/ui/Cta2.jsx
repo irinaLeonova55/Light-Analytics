@@ -18,8 +18,13 @@ const Cta2 = () => {
               <Button
                 variant="largeWhite"
                 text="Бесплатный доступ на 14 дней"
+                href="https://lightanalytics.ru/reg"
               />
-              <Button variant="transparent" text="Записаться на демо-встречу" />
+              <Button
+                variant="transparent"
+                text="Записаться на демо-встречу"
+                href="https://lightanalytics.ru/reg"
+              />
             </div>
           </div>
           <img

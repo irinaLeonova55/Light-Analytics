@@ -13,8 +13,16 @@ const Cta1 = () => {
             доступ
           </h2>
           <div className={styles.ctaOneBtnWrapper}>
-            <Button variant="largePurple" text="Бесплатный доступ на 14 дней" />
-            <Button variant="transparent" text="Записаться на демо-встречу" />
+            <Button
+              variant="largePurple"
+              text="Бесплатный доступ на 14 дней"
+              href="https://lightanalytics.ru/reg"
+            />
+            <Button
+              variant="transparent"
+              text="Записаться на демо-встречу"
+              href="https://lightanalytics.ru/reg"
+            />
           </div>
         </div>
         <div className={styles.mockupViewport}>

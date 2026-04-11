@@ -58,3 +58,15 @@
   z-index: 2;
   filter: blur(150px);
 }
+
+@media (max-width: 768px) {
+  .ctaOneBtnWrapper {
+    flex-direction: column;
+    width: 285px;
+    margin-bottom: 50px;
+  }
+
+  .ctaOneHeadline {
+    font-size: 34px;
+  }
+}

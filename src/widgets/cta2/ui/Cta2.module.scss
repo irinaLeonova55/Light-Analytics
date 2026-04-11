@@ -42,7 +42,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
-  height: 50px;
+  min-height: 50px;
   z-index: 20;
   max-width: 528px;
 }
@@ -53,7 +53,7 @@
   height: auto;
   bottom: 0;
   right: -150px;
-  z-index: 5;
+  z-index: 15;
 }
 
 .ctaTwoGradient {
@@ -76,4 +76,45 @@
   filter: blur(130px);
   bottom: -300px;
   z-index: 4;
+}
+
+@media (max-width: 1330px) {
+  .cpaTwoImg {
+    max-width: 800px;
+    height: auto;
+    right: -100px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .cpaTwoImg {
+    position: static;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ctaTwoWrapper {
+    display: grid;
+    grid-column: 1fr;
+    padding-top: 7rem;
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaTwoHeadline {
+    font-size: 34px;
+  }
+
+  .ctaTwoBtnWrapper {
+    grid-template-columns: 1fr;
+    width: 285px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .headlineColor {
+    display: none;
+  }
 }

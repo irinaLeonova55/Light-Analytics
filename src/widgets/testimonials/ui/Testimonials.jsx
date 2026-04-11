@@ -78,7 +78,7 @@ const Testimonials = () => {
               </button>
             </div>
 
-            <div className="pagination"></div>
+            <div className={`pagination ${styles.pagination}`}></div>
           </div>
 
           <Swiper

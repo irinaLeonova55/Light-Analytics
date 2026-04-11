@@ -17,34 +17,57 @@ const Pricing = () => {
   const tariffs = {
     1: {
       label: 'Месячная подписка',
+
       period: 'Месяц',
+
       price: 3500,
+
       slash: 'мес',
+
       forTen: 5500,
+
       forThirty: 9500,
     },
+
     2: {
       label: 'Подписка на квартал',
+
       period: 'Квартал',
-      price: 9450,
-      slash: 'кв',
-      forTen: 5000,
-      forThirty: 8500,
+
+      price: 3150,
+
+      slash: 'мес',
+
+      forTen: 4950,
+
+      forThirty: 8550,
     },
+
     3: {
       label: 'Подписка на полгода',
+
       period: 'Полгода',
-      price: 17850,
-      slash: 'полгода',
-      forTen: 4700,
-      forThirty: 8000,
+
+      price: 2975,
+
+      slash: 'мес',
+
+      forTen: 4675,
+
+      forThirty: 8075,
     },
+
     4: {
       label: 'Годовая подписка',
+
       period: 'Год',
-      price: 33600,
-      slash: 'год',
-      forTen: 4500,
+
+      price: 2800,
+
+      slash: 'мес',
+
+      forTen: 4400,
+
       forThirty: 7600,
     },
   };
@@ -59,7 +82,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className={styles.pricing}>
+    <section id="pricing" className={styles.pricing}>
       <div className={styles.pricingBg}>
         <Container size="pricing">
           <Headline

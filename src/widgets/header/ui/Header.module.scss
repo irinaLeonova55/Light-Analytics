@@ -19,21 +19,6 @@
   margin: 0 auto;
 }
 
-.menu {
-  display: flex;
-  max-width: 440px;
-  justify-content: space-between;
-  gap: 2.5rem;
-  font-size: 15px;
-  letter-spacing: -2%;
-
-  & li a {
-    color: #ffffff;
-    opacity: 0.65;
-    font-weight: $fw-regular;
-  }
-}
-
 .logoHeader {
   display: flex;
   justify-content: center;
@@ -44,9 +29,49 @@
   }
 }
 
+.burgerIconWrapper {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+
 .btnWrapper {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 0.5rem;
+}
+
+.burgerIcon {
+  width: 100%;
+  width: 24px;
+  height: 24px;
+  display: none;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .burgerIcon {
+    display: flex;
+    justify-content: end;
+  }
+
+  .headerContainer {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .menuWrapper {
+    display: none;
+  }
+
+  .logoHeader {
+    justify-content: left;
+  }
+
+  .btnWrapper {
+    display: none;
+  }
 }

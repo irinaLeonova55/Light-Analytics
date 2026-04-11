@@ -158,3 +158,13 @@
   color: #ffffff;
   background: #6162fd;
 }
+
+@media (max-width: 600px) {
+  .discount {
+    display: none;
+  }
+
+  .period::before {
+    display: none;
+  }
+}

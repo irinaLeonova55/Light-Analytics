@@ -79,3 +79,22 @@
   filter: blur(250px);
   z-index: 2;
 }
+
+@media (max-width: 1024px) {
+  .featuresWrapper {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .featuresWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cardWindow {
+    height: auto;
+    padding-block: 3.25rem;
+  }
+}

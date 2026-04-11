@@ -1,6 +1,5 @@
 .headlineWrapper {
   width: 100%;
-  background: #000;
 }
 
 .headline {
@@ -36,12 +35,10 @@
 }
 
 .title {
-  font-size: clamp(3.5rem, 3vw, 2.5rem);
-
+  font-size: clamp(31px, 4vw, 55px);
   font-weight: $fw-medium;
   line-height: $lh-heading;
   letter-spacing: -4%;
-  /*text-align: center;*/
   color: #ffffff;
   padding: 0.75rem 0 1.5rem;
 }
@@ -95,4 +92,10 @@
   color: #0b0b0c;
   opacity: 0.6;
   font-size: 15px;
+}
+
+@media (max-width: 470px) {
+  .title {
+    font-size: 31px;
+  }
 }

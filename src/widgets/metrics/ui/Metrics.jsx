@@ -11,7 +11,7 @@ const Metrics = () => {
   ];
 
   return (
-    <section className={styles.metrics}>
+    <section id="metrics" className={styles.metrics}>
       <Container size="cards">
         <Headline
           supertitle="Преимущества"

@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import Header from '@/widgets/header/ui/Header';
 import Hero from '@/widgets/hero/ui/Hero';
 import Solutions from '@/widgets/solutions/ui/Solutions';
@@ -14,11 +16,27 @@ import Cta2 from '@/widgets/cta2/ui/Cta2';
 import Cta1 from '@/widgets/cta/ui/Cta1';
 import Testimonials from '@/widgets/testimonials/ui/Testimonials';
 import Footer from '@/widgets/footer/ui/Footer';
+import Burger from '@/shared/ui/burger/ui/Burger';
 
 const LandingPage = () => {
+  const [isBurger, setIsBurger] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isBurger ? 'hidden' : 'auto';
+  }, [isBurger]);
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setIsBurger(false);
+    };
+
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
   return (
     <>
-      <Header />
+      <Header setIsBurger={setIsBurger} />
       <main>
         <Hero />
         <Video />
@@ -36,6 +54,8 @@ const LandingPage = () => {
         <Cta2 />
       </main>
       <Footer />
+
+      <Burger setIsBurger={setIsBurger} isBurger={isBurger} />
     </>
   );
 };

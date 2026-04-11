@@ -142,3 +142,67 @@
   letter-spacing: -3%;
   color: #ffffff;
 }
+
+@media (max-width: 1130px) {
+  .sellersFigure {
+    width: 450px;
+    height: auto;
+    right: -125px;
+    top: -10px;
+  }
+}
+
+@media (max-width: 930px) {
+  .sellersCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .sellersFigure {
+    width: 450px;
+    height: auto;
+    right: -125px;
+    top: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sellers {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .triangle {
+    max-width: 260px;
+    height: auto;
+  }
+
+  .sellersItemText,
+  .sellerImgDown,
+  .sellerImgUp {
+    padding: 0.75rem;
+  }
+
+  .control {
+    left: -2px;
+  }
+
+  .speed {
+    right: -2px;
+  }
+
+  .advantageItem {
+    height: 36px;
+    font-size: 12px;
+    padding-inline: 1rem;
+  }
+
+  .block {
+    gap: 2px;
+  }
+
+  .row {
+    gap: 2px;
+  }
+}

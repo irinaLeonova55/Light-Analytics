@@ -46,7 +46,7 @@ const Faq = () => {
     },
   ];
   return (
-    <section className={styles.faq}>
+    <section id="faq" className={styles.faq}>
       <div className={styles.faqWrapper}>
         <Container size="narrow">
           <Headline supertitle="FAQ" title="Часто задаваемые вопросы" />

@@ -15,7 +15,7 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background: #ffffff3b; // цвет линии
+    background: #ffffff3b;
     transform: translateX(-50%);
   }
 }
@@ -137,4 +137,49 @@
   max-width: 470px;
   gap: 10px;
   margin-top: 40px;
+}
+
+@media (max-width: 902px) {
+  .signupStep {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'txt';
+    padding-bottom: 20px;
+  }
+
+  .signupImg {
+    display: none;
+  }
+
+  .signupText {
+    width: 100%;
+  }
+
+  .signupWrapper {
+    &::before {
+      left: 2px;
+      transform: translateX(0);
+    }
+  }
+
+  .before:before {
+    left: -44px;
+  }
+
+  .after:before {
+    position: absolute;
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    left: -44px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid #6162fd;
+  }
+
+  .signupTextSide {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
 }

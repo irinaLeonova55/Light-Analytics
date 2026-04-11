@@ -73,3 +73,40 @@
   top: 150px;
   right: 63px;
 }
+
+@media (max-width: 1360px) {
+  .marketplacesImg {
+    right: -60px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .marketplacesImg {
+    top: 200px;
+    width: 700px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .marketplacesImg {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .marketplacesWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .marketplacesSteps,
+  .marketplacesStep {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplacesWrapper {
+    padding-bottom: 5rem;
+  }
+}

@@ -41,8 +41,19 @@ const Footer = () => {
             <div className={styles.footerLeft}>
               <img src={logoGradient} alt="Light Analytics" />
               <div className={styles.footerBtnWrapper}>
-                <Button variant="largePurple" text="Создать аккаунт" />
-                <Button variant="largeWhite" text="Войти" />
+                <Button
+                  variant="largePurple"
+                  text="Создать аккаунт"
+                  href="https://lightanalytics.ru/login"
+                />
+                <Button
+                  variant="largeWhite"
+                  text="Войти"
+                  href="https://lightanalytics.ru/reg"
+                />
+              </div>
+              <div className={styles.socialWrapperMobile}>
+                <Social />
               </div>
             </div>
             <div className={styles.footerLinks}>

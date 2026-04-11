@@ -1,5 +1,8 @@
 .btn {
   &.littleGrey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 67px;
     height: 30px;
     color: #ffffff;
@@ -15,6 +18,9 @@
   }
 
   &.littleWhite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 114px;
     height: 30px;
     background: #ffffff;

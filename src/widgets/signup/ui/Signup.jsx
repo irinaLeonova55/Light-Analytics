@@ -54,7 +54,7 @@ const Signup = () => {
   ];
 
   return (
-    <section className={styles.signup}>
+    <section id="signup" className={styles.signup}>
       <Container size="signup">
         <Headline
           supertitle="План подключения"
@@ -112,8 +112,16 @@ const Signup = () => {
           ))}
         </div>
         <div className={styles.signupBtnWrapper}>
-          <Button variant="largePurple" text="Бесплатный доступ на 14 дней" />
-          <Button variant="transparent" text="Записаться на демо-встречу" />
+          <Button
+            variant="largePurple"
+            text="Бесплатный доступ на 14 дней"
+            href="https://lightanalytics.ru/reg"
+          />
+          <Button
+            variant="transparent"
+            text="Записаться на демо-встречу"
+            href="https://lightanalytics.ru/reg"
+          />
         </div>
       </Container>
     </section>

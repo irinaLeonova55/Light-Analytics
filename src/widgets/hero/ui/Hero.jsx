@@ -34,8 +34,18 @@ const Hero = () => {
             <span>Нам доверяют уже 70+ пользователей</span>
           </div>
           <h1>
-            Точная, простая и быстрая оцифровка{' '}
-            <img src={heroIcon} alt="Иконка график" />
+            Точная,{' '}
+            <img
+              src={heroIcon}
+              alt="Иконка график"
+              className={styles.iconMobile}
+            />
+            простая и быстрая оцифровка{' '}
+            <img
+              src={heroIcon}
+              alt="Иконка график"
+              className={styles.iconDesktop}
+            />
             для селлеров
           </h1>
           <p className={styles.heroDesc}>
@@ -45,8 +55,16 @@ const Hero = () => {
         </div>
         <div className={styles.heroContainer}>
           <div className={styles.heroBtnWrapper}>
-            <Button variant="largePurple" text="Бесплатный доступ на 14 дней" />
-            <Button variant="transparent" text="Записаться на демо-встречу" />
+            <Button
+              variant="largePurple"
+              text="Бесплатный доступ на 14 дней"
+              href="https://lightanalytics.ru/reg"
+            />
+            <Button
+              variant="transparent"
+              text="Записаться на демо-встречу"
+              href="https://lightanalytics.ru/reg"
+            />
           </div>
           <div className={styles.mockupViewport}>
             <img

@@ -61,3 +61,15 @@
   filter: blur(300px);
   z-index: 2;
 }
+
+@media (max-width: 1024px) {
+  .metricsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .metricsWrapper {
+    grid-template-columns: 1fr;
+  }
+}
