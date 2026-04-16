@@ -1,17 +1,55 @@
+import {
+  motion,
+  animate,
+  useMotionValue,
+  useTransform,
+  useInView,
+} from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+
 import styles from './Metrics.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 
 const Metrics = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const cards = [
-    { id: 1, counter: '70+', text: 'Селлеров' },
-    { id: 2, counter: '290 млн', text: 'Совокупный оборот рублей в месяц' },
-    { id: 3, counter: '10-15%', text: 'Средняя чистая прибыль' },
-    { id: 4, counter: '100%', text: 'Средний годовой ROI' },
+    { id: 1, value: 70, suffix: '+', text: 'Селлеров' },
+    {
+      id: 2,
+      value: 290,
+      suffix: ' млн',
+      text: 'Совокупный оборот рублей в месяц',
+    },
+    { id: 3, value: 15, suffix: '%', text: 'Средняя чистая прибыль' },
+    { id: 4, value: 100, suffix: '%', text: 'Средний годовой ROI' },
   ];
 
+  const counts = useRef(cards.map(() => useMotionValue(0))).current;
+
+  const rounded = counts.map((count) =>
+    useTransform(count, (latest) => Math.round(latest)),
+  );
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const animations = counts.map((count, i) =>
+      animate(count, cards[i].value, {
+        duration: 3,
+        ease: 'easeOut',
+      }),
+    );
+
+    return () => animations.forEach((a) => a.stop());
+  }, [isInView]);
+
   return (
-    <section id="metrics" className={styles.metrics}>
+    <section ref={ref} id="metrics" className={styles.metrics}>
       <Container size="cards">
         <Headline
           supertitle="Преимущества"
@@ -22,13 +60,22 @@ const Metrics = () => {
         />
         <div className={styles.metricsWrapper}>
           {cards.map((card, index) => (
-            <div
+            <motion.div
               key={card.id}
-              className={`${styles.metricCard} ${index === 1 ? styles.cardBlue : styles.cardWhite}`}
+              onMouseEnter={() => setActiveCard(card.id)}
+              onMouseLeave={() => setActiveCard(null)}
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`${styles.metricCard} ${index === 1 ? styles.cardBlue : styles.cardWhite} ${activeCard && activeCard !== card.id ? styles.cardDim : ''}`}
             >
-              <span className={styles.metricCounter}>{card.counter}</span>
+              <span className={styles.metricCounter}>
+                <motion.span>{rounded[index]}</motion.span>
+                <span>{card.suffix}</span>
+              </span>
               <span className={styles.metricText}>{card.text}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </Container>

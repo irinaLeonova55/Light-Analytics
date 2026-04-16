@@ -6,10 +6,39 @@
   font-size: 15px;
   letter-spacing: -2%;
 
-  & li a {
-    color: #ffffff;
-    opacity: 0.65;
+  li a {
+    position: relative;
+    color: rgba($color: #fff, $alpha: 0.6);
+    /*opacity: 0.65;*/
     font-weight: $fw-regular;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+
+      width: 0;
+      height: 1px;
+      background: #6162fd;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: #6162fd;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: #6162fd;
+      opacity: 0.8;
+    }
   }
 }
 

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import styles from './Cta2.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Button from '@/shared/ui/Button/Button';
@@ -15,11 +17,22 @@ const Cta2 = () => {
               <span className={styles.headlineColor}>14-ти дневный доступ</span>
             </h2>
             <div className={styles.ctaTwoBtnWrapper}>
-              <Button
-                variant="largeWhite"
-                text="Бесплатный доступ на 14 дней"
-                href="https://lightanalytics.ru/reg"
-              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{
+                  opacity: 1,
+                  scale: [0.9, 1.02, 1],
+                }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9 }}
+              >
+                <Button
+                  variant="largeWhite"
+                  text="Бесплатный доступ на 14 дней"
+                  href="https://lightanalytics.ru/reg"
+                />
+              </motion.div>
+
               <Button
                 variant="transparent"
                 text="Записаться на демо-встречу"

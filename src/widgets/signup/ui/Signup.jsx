@@ -1,3 +1,6 @@
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 import styles from './Signup.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
@@ -15,6 +18,15 @@ import signupStep5Bg from '@/shared/assets/images/signup-step-5.png';
 import signupStep5Img from '@/shared/assets/images/signup-step-5-img.png';
 
 const Signup = () => {
+  const signupRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: signupRef,
+    offset: ['start center', 'end center'],
+  });
+
+  const height = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+
   const steps = [
     {
       id: 1,
@@ -54,15 +66,38 @@ const Signup = () => {
   ];
 
   return (
-    <section id="signup" className={styles.signup}>
+    <section ref={signupRef} id="signup" className={styles.signup}>
       <Container size="signup">
         <Headline
           supertitle="План подключения"
           title="Создайте аккаунт и получите доступ к сервису в этот же день"
         />
-        <div className={styles.signupWrapper}>
+        <div
+          className={styles.signupWrapper}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 60 },
+            show: { opacity: 1, y: 0 },
+          }}
+        >
+          <div className={styles.timelineLine}>
+            <motion.div
+              className={styles.timelineProgress}
+              style={{ height }}
+            ></motion.div>
+          </div>
+
           {steps.map((step, index) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.2,
+              }}
+              viewport={{ once: true, margin: '-150px' }}
               className={`${styles.signupStep} ${index % 2 !== 0 ? styles.reverse : ''}`}
             >
               <div
@@ -108,7 +143,7 @@ const Signup = () => {
                   <p>{step.desc}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className={styles.signupBtnWrapper}>
@@ -124,6 +159,9 @@ const Signup = () => {
           />
         </div>
       </Container>
+      <div className={styles.sighupEllipseUp} />
+      <div className={styles.sighupEllipseRight} />
+      <div className={styles.sighupEllipseDown} />
     </section>
   );
 };

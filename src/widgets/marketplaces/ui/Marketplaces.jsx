@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import styles from './Marketplaces.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
@@ -28,6 +30,30 @@ const Marketplaces = () => {
     },
   ];
 
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };
+
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 15,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  };
+
   return (
     <section className="marketplaces">
       <div className={styles.marketplacesWrapper}>
@@ -39,14 +65,24 @@ const Marketplaces = () => {
               title="На маркетплейсах можно и нужно зарабатывать"
               light
             />
-            <ol className={styles.marketplacesSteps}>
+            <motion.ol
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-100px' }}
+              className={styles.marketplacesSteps}
+            >
               {steps.map((step) => (
-                <li key={step.id} className={styles.marketplacesStep}>
+                <motion.li
+                  key={step.id}
+                  variants={item}
+                  className={styles.marketplacesStep}
+                >
                   <span className={styles.stepNumber}>{step.id}</span>
                   <p className={styles.stepText}>{step.text}</p>
-                </li>
+                </motion.li>
               ))}
-            </ol>
+            </motion.ol>
           </div>
         </Container>
         <img

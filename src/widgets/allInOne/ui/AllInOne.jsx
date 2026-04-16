@@ -6,6 +6,22 @@ import logoPurple from '@/shared/assets/icons/logo-purple.svg';
 import allMockup from '@/shared/assets/images/all-mockup.png';
 
 const AllInOne = () => {
+  const leftList = [
+    'Планирование',
+    'Финансовый учет (P&L, Баланс, ДДС)',
+    'Воронка',
+    'Юнит-экономика',
+    'Рука на пульсе',
+  ];
+
+  const rightList = [
+    'Складский учет и аналитика остатков',
+    'Аналитика по товарам',
+    ' Учет себестоимости партиям',
+    'Аналитика рекламных компаний',
+    'Распределение по складам',
+  ];
+
   return (
     <section className={styles.allInOne}>
       <Container size="cards">
@@ -17,27 +33,26 @@ const AllInOne = () => {
         <div className={styles.allDiagram}>
           {/* левый список */}
           <ul className={styles.leftList}>
-            <li>Планирование</li>
-            <li>Финансовый учет (P&L, Баланс, ДДС)</li>
-            <li>Воронка</li>
-            <li>Юнит-экономика</li>
-            <li>Рука на пульсе</li>
+            {leftList.map((item, i) => (
+              <li key={i}>
+                <span className={styles.itemText}>{item}</span>
+              </li>
+            ))}
           </ul>
 
           {/* центр */}
           <div className={styles.allCenter}>
             <img src={logoPurple} alt="Логотип" className={styles.allLogo} />
             <img src={allMockup} alt="Мокап" className={styles.allMockup} />
-            
           </div>
 
           {/* правый список */}
           <ul className={styles.rightList}>
-            <li>Складский учет и аналитика остатков</li>
-            <li>Аналитика по товарам</li>
-            <li>Учет себестоимости партиям</li>
-            <li>Аналитика рекламных компаний</li>
-            <li>Распределение по складам</li>
+            {rightList.map((item, i) => (
+              <li key={i}>
+                <span className={styles.itemText}>{item}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </Container>

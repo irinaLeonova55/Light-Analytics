@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import styles from './Sellers.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
@@ -27,7 +29,13 @@ const Sellers = () => {
           desc="Мы проводим десятки встреч с селлерами, чтобы выработать максимально эффективную систему управления бизнесом в нашем сервисе"
         />
         <div className={styles.sellersCards}>
-          <div className={styles.sellersItemText}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            viewport={{ once: true }}
+            className={styles.sellersItemText}
+          >
             <img
               src={sellersArrow}
               alt="Стрелка"
@@ -41,9 +49,13 @@ const Sellers = () => {
               финансы и масштабируйте прибыль — всё в одной системе без Excel и
               ручных таблиц.
             </p>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            viewport={{ once: true }}
             style={{
               backgroundImage: `url(${sellersBgUp})`,
               backgroundSize: 'cover',
@@ -68,9 +80,13 @@ const Sellers = () => {
               alt="Фигура"
               className={styles.sellersFigure}
             />
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
             style={{
               backgroundImage: `url(${sellersBgDown})`,
               backgroundSize: 'cover',
@@ -89,9 +105,15 @@ const Sellers = () => {
               <span className={styles.control}>Контроль</span>
               <span className={styles.speed}>Скорость</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.sellersItemText}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.45 }}
+            viewport={{ once: true }}
+            className={styles.sellersItemText}
+          >
             <img
               src={sellersArrow}
               alt="Стрелка"
@@ -105,7 +127,7 @@ const Sellers = () => {
               комиссий, логистики, хранения и всех дополнительных расходов.
               Решения принимаются на основе точных цифр, а не догадок
             </p>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

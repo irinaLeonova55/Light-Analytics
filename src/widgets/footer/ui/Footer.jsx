@@ -33,6 +33,13 @@ const Footer = () => {
     },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <Container size="cards">
@@ -70,7 +77,7 @@ const Footer = () => {
                   </ul>
                 </div>
               ))}
-              <button className={styles.btnUp}>
+              <button className={styles.btnUp} onClick={scrollToTop}>
                 <img src={arrowUp} alt="Наверх" />
               </button>
             </div>

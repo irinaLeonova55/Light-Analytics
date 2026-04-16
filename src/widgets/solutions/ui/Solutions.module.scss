@@ -99,6 +99,20 @@
   font-size: 20px;
   line-height: 135%;
   color: #fff;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: #6162fd;
+  }
+}
+
+.white {
+  background: #fff;
 }
 
 .tabSvg {

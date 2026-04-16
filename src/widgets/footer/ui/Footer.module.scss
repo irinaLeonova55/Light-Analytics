@@ -60,8 +60,35 @@ footer {
   letter-spacing: -1%;
 
   & li a {
+    position: relative;
     color: #ffffff;
     opacity: 0.6;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+
+      width: 0;
+      height: 1px;
+      background: #6162fd;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: #6162fd;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: #6162fd;
+      opacity: 0.8;
+    }
   }
 }
 

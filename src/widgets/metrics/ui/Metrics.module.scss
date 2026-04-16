@@ -20,6 +20,16 @@
   border-radius: 22px;
   padding: 40px 20px;
   color: #ffffff;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 35px rgba(255, 255, 255, 0.06);
+  }
+}
+
+.cardDim {
+  filter: brightness(0.5);
 }
 
 .cardWhite {

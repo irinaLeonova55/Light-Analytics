@@ -1,10 +1,17 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100svh;
-  background: #0b0b0b url('@/shared/assets/images/hero-bg.png') center / cover
-    no-repeat;
-  overflow: hidden;
+  height: 180vh;
+  /*background: #0b0b0b url('@/shared/assets/images/hero-bg.png') center / cover
+    no-repeat;*/
+  background: #0b0b0b;
+}
+
+.heroBg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('@/shared/assets/images/hero-bg.png') center / cover no-repeat;
 }
 
 .heroContainer {
@@ -15,12 +22,13 @@
   align-items: center;
   width: 100%;
   min-height: 90px;
-  border-left: 1px solid #ffffff1f;
-  border-right: 1px solid #ffffff1f;
-  border-bottom: 1px solid #ffffff1f;
   padding-top: 1.25rem;
 
-  &:not(:last-child)::before {
+  /*border-left: 1px solid #ffffff1f;
+  border-right: 1px solid #ffffff1f;
+  border-bottom: 1px solid #ffffff1f;*/
+
+  /*&:not(:last-child)::before {
     content: '';
     position: absolute;
     width: 8px;
@@ -38,7 +46,19 @@
     bottom: -4px;
     right: -4px;
     background: #6162fd;
-  }
+  }*/
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  margin-top: 50px;
 }
 
 .heroBanner {
@@ -124,24 +144,29 @@ h1 {
 
 .mockupViewport {
   width: 100%;
+
   position: relative;
-  overflow: hidden;
-  height: 500px;
+
+  /*height: 500px;*/
+  /*width: 900px;*/
+  max-width: 90vw;
+  z-index: 10;
+  /*transform-origin: top top;*/
 }
 
 .mockupImg {
-  position: absolute;
+  display: block;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
   z-index: 50;
-  padding-top: 54px;
 }
 
 .glass {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background: #ffffff03;
   backdrop-filter: blur(30px);
 }
@@ -169,13 +194,38 @@ h1 {
   height: 527px;
   left: 35%;
   transform: translateX(-30%);
-  bottom: -200px;
+  bottom: -350px;
   mix-blend-mode: Lighten;
   background: #6162fd;
-  filter: blur(200px);
+  filter: blur(150px);
+}
+
+@media (max-width: 1280px) {
+  .hero {
+    height: auto;
+  }
+
+  .heroBg {
+    height: auto;
+  }
+
+  .stickyWrapper {
+    position: static;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .mockupViewport {
+    position: static;
+    max-width: 100vw;
+  }
 }
 
 @media (max-width: 1024px) {
+  .mockupViewport {
+    transform-origin: top top;
+    max-width: 100%;
+  }
   .heroContainer {
     border: none;
 

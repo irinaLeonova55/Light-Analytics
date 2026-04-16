@@ -27,9 +27,19 @@
 
 .ctaOneBtnWrapper {
   display: flex;
+  align-items: center;
+
   gap: 0.5rem;
   height: 50px;
+  width: 593px;
   z-index: 20;
+
+  div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+  }
 }
 
 .mockupViewport {
@@ -62,8 +72,9 @@
 @media (max-width: 768px) {
   .ctaOneBtnWrapper {
     flex-direction: column;
+    justify-content: center;
     width: 285px;
-    margin-bottom: 50px;
+    height: auto;
   }
 
   .ctaOneHeadline {

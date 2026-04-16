@@ -1,4 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import {
+  motion,
+  animate,
+  useMotionValue,
+  useTransform,
+  useMotionValueEvent,
+  AnimatePresence,
+} from 'framer-motion';
 
 import styles from './Pricing.module.scss';
 import Container from '@/shared/ui/Container/Container';
@@ -81,6 +89,17 @@ const Pricing = () => {
     { id: 4, text: 'Без ограничений кол-во пользователей' },
   ];
 
+  const priceMotion = useMotionValue(activeTariff.price);
+
+  const rounded = useTransform(priceMotion, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    animate(priceMotion, activeTariff.price, {
+      duration: 0.6,
+      ease: 'easeOut',
+    });
+  }, [activeTariff.price]);
+
   return (
     <section id="pricing" className={styles.pricing}>
       <div className={styles.pricingBg}>
@@ -102,15 +121,27 @@ const Pricing = () => {
                   <span className={styles.discount}>
                     {tab.id !== 1 ? ` (-${tab.discount}%)` : ''}
                   </span>
+
+                  {tab.id !== 1 ? (
+                    <span className={styles.discountMobile}>
+                      -{tab.discount}%
+                    </span>
+                  ) : (
+                    ''
+                  )}
                 </button>
               ))}
             </div>
+
             <div className={styles.pricingCardBg}>
               <div className={styles.priceArea}>
                 <span>{activeTariff.label}</span>
-                <div className={styles.price}>
-                  {activeTariff.price} ₽ <span>/{activeTariff.slash}</span>
-                </div>
+                <motion.div className={styles.price}>
+                  <motion.span className={styles.priceCount}>
+                    {rounded}
+                  </motion.span>{' '}
+                  ₽<span>/{activeTariff.slash}</span>
+                </motion.div>
                 <p className={styles.underPrice}>
                   При выручке до 10 млн. руб. в месяц
                 </p>

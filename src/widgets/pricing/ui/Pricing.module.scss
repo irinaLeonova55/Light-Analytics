@@ -31,6 +31,7 @@
 }
 
 .period {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,6 +44,11 @@
   line-height: 111%;
   letter-spacing: -5%;
   color: #0b0b0b;
+
+  &:hover {
+    background: #5758c5;
+    color: #fff;
+  }
 }
 
 .period::before {
@@ -61,6 +67,27 @@
   font-size: 17px;
   line-height: 111%;
   letter-spacing: -5%;
+}
+
+.discountMobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 70%);
+  width: 34px;
+  height: 16px;
+  background: #0b0b0b;
+  border-radius: 3px;
+  color: #fff;
+  font-family: Manrope;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 111%;
+  letter-spacing: -5%;
+  text-align: center;
 }
 
 .pricingCardBg {
@@ -98,6 +125,8 @@
 }
 
 .price {
+  display: flex;
+  align-items: end;
   font-weight: 600;
   font-size: 35px;
   line-height: 96%;
@@ -105,6 +134,16 @@
   text-align: left;
   padding-top: 1rem;
   padding-bottom: 0.75rem;
+
+  .priceCount {
+    display: block;
+    font-size: 35px;
+    line-height: 96%;
+    letter-spacing: -4%;
+    text-align: left;
+    color: #0b0b0b;
+    width: 86px;
+  }
 
   span {
     font-weight: 600;
@@ -159,9 +198,13 @@
   background: #6162fd;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .discount {
     display: none;
+  }
+
+  .discountMobile {
+    display: flex;
   }
 
   .period::before {

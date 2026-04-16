@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Solutions.module.scss';
 import Container from '@/shared/ui/Container/Container';
 
@@ -118,7 +119,20 @@ const Solutions = () => {
                 ))}
               </ul>
             </div>
-            <img className={styles.tabContent} src={tabs[tabActive].content} />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={tabs[tabActive].id}
+                className={styles.tabContent}
+                src={tabs[tabActive].content}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{
+                  duration: 0.4,
+                  ease: 'easeOut',
+                }}
+              />
+            </AnimatePresence>
           </div>
 
           <div className={styles.solutionContentMobile}>
@@ -135,7 +149,7 @@ const Solutions = () => {
                     className={`${styles.solution} ${active ? styles.activItem : ''}`}
                   >
                     {tab.text}
-                    <span>
+                    <span className={`${active ? styles.white : ''}`}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

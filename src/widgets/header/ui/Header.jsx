@@ -14,17 +14,10 @@ const Header = ({ setIsBurger }) => {
           <div className={styles.menuWrapper}>
             <Menu section="menuHeader" />
           </div>
-          {/*<nav>
-            <ul className={styles.menu}>
-              {links.map((link) => (
-                <li key={link.id}>
-                  <a href={link.href}>{link.name}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>*/}
           <div className={styles.logoHeader}>
-            <img src={logoWhite} alt="Light Analitics" />
+            <a href="/">
+              <img src={logoWhite} alt="Light Analitics" />
+            </a>
           </div>
 
           <div className={styles.btnWrapper}>
