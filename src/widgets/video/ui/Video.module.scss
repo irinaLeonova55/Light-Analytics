@@ -11,7 +11,8 @@
   height: 930px;
   top: -300px;
   border-radius: 50%;
-  right: -400px;
+  right: 0;
+  transform: translateX(400px);
   opacity: 0.3;
   filter: blur(300px);
   z-index: 2;
@@ -24,7 +25,8 @@
   height: 394px;
   top: -100px;
   border-radius: 50%;
-  left: -45px;
+  left: 0;
+  transform: translateX(-45px);
   opacity: 0.5;
   filter: blur(350px);
   z-index: 2;
@@ -37,7 +39,8 @@
   height: 668px;
   bottom: -200px;
   border-radius: 50%;
-  left: -47px;
+  left: 0;
+  transform: translateX(-47px);
   opacity: 0.5;
   filter: blur(300px);
   z-index: 2;
