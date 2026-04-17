@@ -165,7 +165,8 @@
   width: 557px;
   height: 349px;
   top: 654px;
-  left: -247px;
+  left: 0;
+  transform: translateX(-247px);
   background: #6162fd;
   border-radius: 50%;
   z-index: 1;
@@ -179,7 +180,8 @@
   background: #6162fd;
   border-radius: 50%;
   top: 1115px;
-  right: -50px;
+  right: 0;
+  transform: translateX(50px);
   filter: blur(520px);
   z-index: 1;
 }
@@ -189,7 +191,8 @@
   width: 802px;
   height: 349px;
   top: 1739px;
-  left: -195px;
+  left: 0;
+  transform: translateX(-195px);
   border-radius: 50%;
   background: #6162fd;
   filter: blur(520px);

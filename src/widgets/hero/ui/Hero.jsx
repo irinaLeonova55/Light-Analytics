@@ -25,7 +25,7 @@ const Hero = () => {
   });
 
   const scaleTransform = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-  const yTransform = useTransform(scrollYProgress, [0, 1], [80, 0]);
+  const yTransform = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
   const scale = isMobile ? 1 : scaleTransform;
   const y = isMobile ? 0 : yTransform;

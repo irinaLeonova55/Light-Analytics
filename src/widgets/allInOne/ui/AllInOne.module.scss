@@ -7,51 +7,43 @@
 .allDiagram {
   /* position: relative;*/
   margin: 0 auto;
-  height: 970px;
+  height: auto;
   display: grid;
   grid-template-columns: 136px auto 210px;
   align-items: start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .allCenter {
-  /*position: absolute;*/
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: url('@/shared/assets/icons/diagram.svg') calc(50% - 72px) top /
-    contain no-repeat;
-  width: 1072px;
-
+  /*background: url('@/shared/assets/icons/diagram.svg') calc(50% - 72px) top /
+    contain no-repeat;*/
+  width: auto;
   height: 100%;
-  align-items: center;
-  left: 50%;
-  top: 50%;
+  display: flex;
+  justify-content: center;
+  /*left: 50%;
+  top: 50%;*/
   /*transform: translate(-50%, -50%);*/
   pointer-events: none;
 }
 
-.allLogo {
-  width: 215px;
-  height: auto;
-}
-
-.allMockup {
-  width: 390px;
-  height: auto;
+.diagram {
+  width: auto;
+  height: 900px;
 }
 
 .leftList {
   /*position: absolute;*/
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  /* left: 0;
-  top: 370px;*/
+  gap: 96px;
+
   /*transform: translateY(-50%);*/
   color: #fff;
   min-width: 136px;
   z-index: 50;
-  margin-top: 108px;
+  margin-top: 96px;
 
   li {
     transition: transform 0.3s ease;
@@ -62,18 +54,14 @@
   }
 
   li:nth-child(3) {
-    /*transform: translateY(14px);*/
-    margin-top: 14px;
   }
 
   li:nth-child(4) {
-    /*transform: translateY(54px);*/
-    margin-top: 42px;
+    margin-top: 34px;
   }
 
   li:nth-child(5) {
-    /*transform: translateY(70px);*/
-    margin-top: 16px;
+    margin-top: 6px;
   }
 }
 
@@ -81,8 +69,8 @@
   /*position: absolute;*/
   display: flex;
   flex-direction: column;
-  gap: 114px;
-  margin-top: 100px;
+  gap: 96px;
+  margin-top: 96px;
   /*transform: translateY(-50%);*/
   color: #fff;
   min-width: 210px;
@@ -97,22 +85,36 @@
   }
 
   li:nth-child(2) {
-    /*transform: translateY(14px);*/
   }
 
   li:nth-child(3) {
-    /*transform: translateY(28px);*/
+    margin-top: 4px;
   }
 
   li:nth-child(4) {
-    margin-top: 52px;
-    /*transform: translateY(90px);*/
+    margin-top: 60px;
   }
 
   li:nth-child(5) {
-    margin-top: 42px;
-    /*transform: translateY(150px);*/
+    margin-top: 36px;
   }
+}
+
+.itemContent {
+  img {
+    display: none;
+    width: 17px;
+    height: auto;
+  }
+}
+
+.itemNumber {
+  display: none;
+  font-size: 12px;
+  line-height: 135%;
+  letter-spacing: -2%;
+  text-align: right;
+  color: rgba($color: #fff, $alpha: 0.12);
 }
 
 .itemText {
@@ -136,7 +138,114 @@
   width: 100%;
 }
 
-@media (max-width: 1466px) {
+@media (max-width: 1430px) {
+  .diagram {
+    height: 800px;
+  }
+  .leftList {
+    margin-top: 86px;
+    gap: 88px;
+
+    li:nth-child(3) {
+      margin-top: -14px;
+    }
+
+    li:nth-child(4) {
+      margin-top: 24px;
+    }
+
+    li:nth-child(5) {
+      margin-top: 2px;
+    }
+  }
+
+  .rightList {
+    margin-top: 80px;
+    gap: 86px;
+
+    li:nth-child(3) {
+      margin-top: 0;
+    }
+
+    li:nth-child(4) {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  .diagram {
+    height: 700px;
+  }
+
+  .leftList {
+    margin-top: 74px;
+    gap: 74px;
+  }
+
+  .rightList {
+    margin-top: 70px;
+    gap: 72px;
+
+    li:nth-child(5) {
+      margin-top: 26px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .diagram {
+    height: 600px;
+  }
+
+  .leftList {
+    margin-top: 60px;
+    gap: 60px;
+
+    li:nth-child(4) {
+      margin-top: 20px;
+    }
+
+    li:nth-child(5) {
+      margin-top: 0;
+    }
+  }
+
+  .rightList {
+    margin-top: 56px;
+    gap: 60px;
+
+    li:nth-child(4) {
+      margin-top: 30px;
+    }
+
+    li:nth-child(5) {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  .diagram {
+    height: 500px;
+  }
+
+  .leftList {
+    margin-top: 50px;
+    gap: 46px;
+  }
+
+  .rightList {
+    margin-top: 46px;
+    gap: 40px;
+
+    li:nth-child(5) {
+      margin-top: 26px;
+    }
+  }
+}
+
+@media (max-width: 930px) {
   .allCenter {
     display: none;
   }
@@ -160,6 +269,7 @@
 
     li {
       display: flex;
+      justify-content: space-between;
       padding-inline: 15px;
       align-items: center;
       width: 100%;
@@ -185,6 +295,18 @@
     li:nth-child(5) {
       margin-top: 0;
     }
+  }
+
+  .itemContent {
+    display: flex;
+    gap: 20px;
+    img {
+      display: block;
+    }
+  }
+
+  .itemNumber {
+    display: block;
   }
 }
 

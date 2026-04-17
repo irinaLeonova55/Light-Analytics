@@ -74,7 +74,7 @@
   height: 214px;
   top: 0;
   border-radius: 50%;
-  left: -200px;
+  transform: translateX(-200px);
   opacity: 0.8;
   filter: blur(250px);
   z-index: 2;
