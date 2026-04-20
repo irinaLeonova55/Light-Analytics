@@ -1,9 +1,11 @@
+import { motion } from 'framer-motion';
+
 import styles from './Features.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 
-import featuresTable from '@/shared/assets/images/features-table.png';
-import featuresChart from '@/shared/assets/images/features-chart.png';
+import featuresTable from '@/shared/assets/images/features-table.svg';
+import featuresChart from '@/shared/assets/images/features-chart.svg';
 import featuresSpeed from '@/shared/assets/images/features-speed.png';
 
 const Features = () => {
@@ -28,6 +30,29 @@ const Features = () => {
     },
   ];
 
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section className={styles.features}>
       <Container size="cards">
@@ -37,9 +62,19 @@ const Features = () => {
           align="center"
         />
 
-        <div className={styles.featuresWrapper}>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className={styles.featuresWrapper}
+        >
           {features.map((feature) => (
-            <div key={feature.id} className={styles.featuresCard}>
+            <motion.div
+              key={feature.id}
+              variants={item}
+              className={styles.featuresCard}
+            >
               <div className={styles.cardWindow}>
                 <img
                   src={feature.img}
@@ -51,9 +86,9 @@ const Features = () => {
                 <h3 className={styles.cardTitle}>{feature.title}</h3>
                 <p className={styles.cardDesc}>{feature.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
       <div className={styles.featuresBlur} />
     </section>

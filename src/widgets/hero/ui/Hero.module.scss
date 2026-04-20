@@ -1,17 +1,28 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 180vh;
+  height: clamp(120vh, 160vh, 180vh);
   /*background: #0b0b0b url('@/shared/assets/images/hero-bg.png') center / cover
     no-repeat;*/
   background: #0b0b0b;
 }
 
 .heroBg {
-  position: relative;
-  width: 100%;
+  position: sticky;
+  top: 0;
   height: 100vh;
+  width: 100%;
   background: url('@/shared/assets/images/hero-bg.png') center / cover no-repeat;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  padding-top: 7rem;
 }
 
 .heroContainer {
@@ -22,7 +33,7 @@
   align-items: center;
   width: 100%;
   min-height: 90px;
-  padding-top: 1.25rem;
+  height: auto;
 
   /*border-left: 1px solid #ffffff1f;
   border-right: 1px solid #ffffff1f;
@@ -115,14 +126,10 @@ h1 {
     vertical-align: -4px;
     margin-right: 8px;
   }
+}
 
-  .iconMobile {
-    width: 30px;
-    height: auto;
-    vertical-align: -4px;
-    display: none;
-    margin-right: 8px;
-  }
+.mockupImgMobile {
+  display: none;
 }
 
 .heroDesc {
@@ -139,12 +146,12 @@ h1 {
   gap: 0.5rem;
   height: 50px;
   z-index: 20;
+  margin-top: 1.25rem;
 }
 
 .mockupViewport {
   width: 100%;
   position: relative;
-  background: #ffffff;
 
   /*height: 500px;*/
   /*width: 900px;*/
@@ -205,13 +212,19 @@ h1 {
   }
 
   .heroBg {
-    height: auto;
+    height: 100%;
   }
 
   .stickyWrapper {
-    position: static;
+    display: none;
+  }
+
+  .mockupImgMobile {
+    display: block;
+    width: 100%;
     height: auto;
-    margin-top: 0;
+    margin: 36px 0 20px;
+    z-index: 10;
   }
 
   .mockupViewport {
@@ -234,14 +247,10 @@ h1 {
     &:not(:last-child)::after {
       display: none;
     }*/
-}
 
-.iconDesktop {
-  display: none;
-}
-
-.iconMobile {
-  display: block;
+  .iconDesktop {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -255,7 +264,7 @@ h1 {
 
   .heroBtnWrapper {
     flex-direction: column;
-    margin-bottom: 2rem;
+    height: auto;
   }
 
   .stickyWrapper {

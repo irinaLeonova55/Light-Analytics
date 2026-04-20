@@ -30,6 +30,14 @@
   border-radius: 50%;
   background: #e4ebf3;
 
+  &:hover {
+    background: #6162fd;
+  }
+
+  &:active {
+    background: #5758c5;
+  }
+
   img {
     width: 24px;
     height: auto;

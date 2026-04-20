@@ -30,8 +30,11 @@
 
 html {
   user-select: none;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
   scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
 }
 
 body {
@@ -42,25 +45,20 @@ body {
   letter-spacing: -2%;
   font-weight: 400;
   margin: 0 auto;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
-/*h1 {
-  font-size: clamp(2rem, 3vw, 4rem);
+/* Chrome / Edge / Safari */
+
+::-webkit-scrollbar {
+  width: 8px;
 }
-  
-widgets
- ├ header
- ├ hero
- ├ video
- ├ features
- ├ platform
- ├ pricing
- ├ metrics
- ├ accuracy
- ├ signup
- ├ sellers
- ├ marketplaces
- ├ testimonials
- ├ faq
- └ footer*/
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6c7cff;
+  border-radius: 10px;
+}

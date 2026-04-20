@@ -149,7 +149,9 @@ const Solutions = () => {
                     className={`${styles.solution} ${active ? styles.activItem : ''}`}
                   >
                     {tab.text}
-                    <span className={`${active ? styles.white : ''}`}>
+                    <span
+                      className={`${active ? styles.white : styles.default}`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

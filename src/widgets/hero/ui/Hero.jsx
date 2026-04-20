@@ -40,8 +40,7 @@ const Hero = () => {
     <section ref={heroRef} className={styles.hero}>
       <div className={styles.heroBg}>
         <Container size="hero">
-          <div className={styles.heroContainer}></div>
-          <div className={styles.heroContainer}>
+          <div className={styles.heroContent}>
             <div className={styles.heroBanner}>
               <div>
                 {users.map((user) => (
@@ -56,13 +55,7 @@ const Hero = () => {
               <span>Нам доверяют уже 70+ пользователей</span>
             </div>
             <h1>
-              Точная,{' '}
-              <img
-                src={heroIcon}
-                alt="Иконка график"
-                className={styles.iconMobile}
-              />
-              простая и быстрая оцифровка{' '}
+              Точная, простая и быстрая оцифровка{' '}
               <img
                 src={heroIcon}
                 alt="Иконка график"
@@ -100,6 +93,11 @@ const Hero = () => {
                 />
               </motion.div>
             </div>
+            <img
+              src={mockup}
+              className={styles.mockupImgMobile}
+              alt="Мокап интерфейса"
+            />
           </div>
         </Container>
         <div className={styles.glass} />
