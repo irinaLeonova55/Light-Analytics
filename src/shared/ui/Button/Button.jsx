@@ -10,10 +10,18 @@ const Button = ({
   // Собираем классы: базовый + специфичный для варианта
   const buttonClasses = `${styles.btn} ${styles[variant]} ${className}`;
 
+  if (href) {
+    return (
+      <a className={buttonClasses} href={href}>
+        {text}
+      </a>
+    );
+  }
+
   return (
-    <a className={buttonClasses} onClick={onClick} href={href}>
+    <button className={buttonClasses} onClick={onClick}>
       {text}
-    </a>
+    </button>
   );
 };
 

@@ -6,7 +6,7 @@ import Button from '@/shared/ui/Button/Button';
 
 import laptop from '@/shared/assets/images/laptop.png';
 
-const Cta2 = () => {
+const Cta2 = ({ setIsModalOpen }) => {
   return (
     <section className={styles.ctaTwo}>
       <Container size="cards">
@@ -36,7 +36,7 @@ const Cta2 = () => {
               <Button
                 variant="transparent"
                 text="Записаться на демо-встречу"
-                href="https://lightanalytics.ru/reg"
+                onClick={() => setIsModalOpen(true)}
               />
             </div>
           </div>

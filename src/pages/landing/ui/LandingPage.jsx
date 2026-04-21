@@ -17,9 +17,11 @@ import Cta1 from '@/widgets/cta/ui/Cta1';
 import Testimonials from '@/widgets/testimonials/ui/Testimonials';
 import Footer from '@/widgets/footer/ui/Footer';
 import Burger from '@/shared/ui/burger/ui/Burger';
+import Modal from '@/widgets/modal/ui/Modal';
 
 const LandingPage = () => {
   const [isBurger, setIsBurger] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = isBurger ? 'hidden' : 'auto';
@@ -38,24 +40,25 @@ const LandingPage = () => {
     <>
       <Header setIsBurger={setIsBurger} />
       <main>
-        <Hero />
+        <Hero setIsModalOpen={setIsModalOpen} />
         <Video />
         <Solutions />
         <AllInOne />
         <Pricing />
         <Metrics />
         <Features />
-        <Signup />
+        <Signup setIsModalOpen={setIsModalOpen} />
         <Sellers />
         <Marketplaces />
         <Testimonials />
-        <Cta1 />
+        <Cta1 setIsModalOpen={setIsModalOpen} />
         <Faq />
-        <Cta2 />
+        <Cta2 setIsModalOpen={setIsModalOpen} />
       </main>
       <Footer />
 
       <Burger setIsBurger={setIsBurger} isBurger={isBurger} />
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

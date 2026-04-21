@@ -17,7 +17,7 @@ import signupStep4Img from '@/shared/assets/images/signup-step-4-img.png';
 import signupStep5Bg from '@/shared/assets/images/signup-step-5.png';
 import signupStep5Img from '@/shared/assets/images/signup-step-5-img.png';
 
-const Signup = () => {
+const Signup = ({ setIsModalOpen }) => {
   const signupRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -155,7 +155,7 @@ const Signup = () => {
           <Button
             variant="transparent"
             text="Записаться на демо-встречу"
-            href="https://lightanalytics.ru/reg"
+            onClick={() => setIsModalOpen(true)}
           />
         </div>
       </Container>

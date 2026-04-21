@@ -17,18 +17,26 @@ const Footer = () => {
     },
     {
       id: 2,
-      title: 'Юридические документы',
+      title: 'Реквизиты',
+      isText: true, // Флаг для рендера обычного текста вместо ссылок
       links: [
-        { name: 'Правила и комиссии', href: '#' },
-        { name: 'Пользовательское соглашение', href: '#' },
+        { name: 'ИП Мигушев Никита Николаевич' },
+        { name: 'ОГРНИП 324774600786201' },
+        { name: 'ИНН 860318721702' },
+        { name: 'Банк МОСКОВСКИЙ ФИЛИАЛ АО КБ "МОДУЛЬБАНК"' },
+        { name: 'БИК 044525092' },
+        { name: 'К/c 30101810645250000092' },
+        { name: 'Счёт 40802810070010477433' },
       ],
     },
     {
       id: 3,
       title: 'Контакты:',
       links: [
-        { name: 'support@gmail.com', href: '#' },
-        { name: '+7 900 900 90 90', href: '#' },
+        {
+          name: 'hello@lightanalytics.ru',
+          href: 'mailto:hello@lightanalytics.ru',
+        },
       ],
     },
   ];
@@ -69,9 +77,13 @@ const Footer = () => {
                   <h4 className={styles.title}>{column.title}</h4>
 
                   <ul className={styles.footerList}>
-                    {column.links.map((link) => (
-                      <li key={link.name}>
-                        <a href={link.href}>{link.name}</a>
+                    {column.links.map((link, index) => (
+                      <li key={index}>
+                        {column.isText ? (
+                          <span style={{ opacity: 0.6 }}>{link.name}</span>
+                        ) : (
+                          <a href={link.href || '#'}>{link.name}</a>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -89,12 +101,11 @@ const Footer = () => {
             <div className={styles.socialWrapper}>
               <Social />
             </div>
-
-            <span className={styles.policy}>Политика конфиденциальности</span>
           </div>
         </div>
       </Container>
     </footer>
   );
 };
+
 export default Footer;

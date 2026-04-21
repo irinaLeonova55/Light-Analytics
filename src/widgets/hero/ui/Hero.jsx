@@ -10,7 +10,7 @@ import heroFoto3 from '@/shared/assets/images/hero-foto-3.png';
 import heroIcon from '@/shared/assets/icons/hero-icon.svg';
 import mockup from '@/shared/assets/images/mockup.png';
 
-const Hero = () => {
+const Hero = ({ setIsModalOpen }) => {
   const heroRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -55,13 +55,13 @@ const Hero = () => {
               <span>Нам доверяют уже 70+ пользователей</span>
             </div>
             <h1>
-              Точная, простая и быстрая оцифровка{' '}
+              Возьмите контроль над цифрами: превратите хаос в системный бизнес{' '}
               <img
                 src={heroIcon}
                 alt="Иконка график"
-                className={styles.iconDesktop}
-              />
-              для селлеров
+                className={styles.heroIcon}
+              />{' '}
+              на маркетплейсах
             </h1>
             <p className={styles.heroDesc}>
               Light Analytics помогает ежедневно отслеживать чистую прибыль по
@@ -78,7 +78,7 @@ const Hero = () => {
               <Button
                 variant="transparent"
                 text="Записаться на демо-встречу"
-                href="https://lightanalytics.ru/reg"
+                onClick={() => setIsModalOpen(true)}
               />
             </div>
             <div className={styles.stickyWrapper}>

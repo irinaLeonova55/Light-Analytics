@@ -37,7 +37,7 @@ const Solutions = () => {
   const tabs = [
     {
       id: 1,
-      text: 'Интеграция с Wildberries и Ozon',
+      text: 'Интеграция с Wildberries и Ozon (скоро)',
       img: integrationIcon,
       imgActive: integrationIconWhite,
       content: integrationImg,
