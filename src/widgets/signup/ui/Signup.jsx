@@ -6,16 +6,16 @@ import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 import Button from '@/shared/ui/Button/Button';
 
-import signupStep1Bg from '@/shared/assets/images/signup-step-1.png';
-import signupStep1Img from '@/shared/assets/images/signup-step-1-img.png';
-import signupStep2Bg from '@/shared/assets/images/signup-step-2.png';
-import signupStep2Img from '@/shared/assets/images/signup-step-2-img.png';
-import signupStep3Bg from '@/shared/assets/images/signup-step-3.png';
-import signupStep3Img from '@/shared/assets/images/signup-step-3-img.png';
-import signupStep4Bg from '@/shared/assets/images/signup-step-4.png';
-import signupStep4Img from '@/shared/assets/images/signup-step-4-img.png';
-import signupStep5Bg from '@/shared/assets/images/signup-step-5.png';
-import signupStep5Img from '@/shared/assets/images/signup-step-5-img.png';
+import signupStep1Bg from '@/shared/assets/images/signup-step-1.webp';
+import signupStep1Img from '@/shared/assets/images/signup-step-1-img.webp';
+import signupStep2Bg from '@/shared/assets/images/signup-step-2.webp';
+import signupStep2Img from '@/shared/assets/images/signup-step-2-img.webp';
+import signupStep3Bg from '@/shared/assets/images/signup-step-3.webp';
+import signupStep3Img from '@/shared/assets/images/signup-step-3-img.webp';
+import signupStep4Bg from '@/shared/assets/images/signup-step-4.webp';
+import signupStep4Img from '@/shared/assets/images/signup-step-4-img.webp';
+import signupStep5Bg from '@/shared/assets/images/signup-step-5.webp';
+import signupStep5Img from '@/shared/assets/images/signup-step-5-img.webp';
 
 const Signup = ({ setIsModalOpen }) => {
   const signupRef = useRef(null);

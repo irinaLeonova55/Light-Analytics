@@ -4,7 +4,7 @@ import styles from './Cta2.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Button from '@/shared/ui/Button/Button';
 
-import laptop from '@/shared/assets/images/laptop.png';
+import laptop from '@/shared/assets/images/laptop.webp';
 
 const Cta2 = ({ setIsModalOpen }) => {
   return (

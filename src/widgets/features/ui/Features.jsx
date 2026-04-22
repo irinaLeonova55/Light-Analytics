@@ -6,7 +6,7 @@ import Headline from '@/shared/ui/Headline/Headline';
 
 import featuresTable from '@/shared/assets/images/features-table.svg';
 import featuresChart from '@/shared/assets/images/features-chart.svg';
-import featuresSpeed from '@/shared/assets/images/features-speed.png';
+import featuresSpeed from '@/shared/assets/images/features-speed.webp';
 
 const Features = () => {
   const features = [

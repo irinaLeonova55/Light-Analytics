@@ -100,6 +100,8 @@ const AllInOne = () => {
           </ul>
         </div>
       </Container>
+      <div className={styles.allEllipseUp} />
+      <div className={styles.allEllipseDown} />
     </section>
   );
 };

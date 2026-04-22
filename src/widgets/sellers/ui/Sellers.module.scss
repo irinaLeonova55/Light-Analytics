@@ -1,6 +1,8 @@
 .sellers {
   background: #f5f6fb;
   padding-bottom: 11rem;
+  overflow-x: clip;
+  z-index: 10;
 }
 
 .sellersCards {
@@ -170,6 +172,14 @@
   .sellers {
     padding-bottom: 5rem;
   }
+
+  .sellersTitle {
+    margin-bottom: 4rem;
+  }
+
+  .sellersItemText {
+    min-height: 360px;
+  }
 }
 
 @media (max-width: 470px) {
@@ -181,7 +191,7 @@
   .sellersItemText,
   .sellerImgDown,
   .sellerImgUp {
-    padding: 0.75rem;
+    padding: 1rem;
   }
 
   .control {

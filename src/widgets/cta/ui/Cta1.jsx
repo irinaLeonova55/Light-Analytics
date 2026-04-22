@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styles from './Cta1.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Button from '@/shared/ui/Button/Button';
-import mockup from '@/shared/assets/images/mockup.png';
+import mockup from '@/shared/assets/images/mockup.webp';
 
 const Cta1 = ({ setIsModalOpen }) => {
   return (

@@ -25,8 +25,6 @@ const Modal = ({ isOpen, onClose }) => {
       email: formData.get('email'),
       telegram: formData.get('telegram'),
     };
-
-    console.log(data);
   };
 
   return (

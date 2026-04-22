@@ -1,11 +1,12 @@
 .allInOne {
+  position: relative;
   width: 100%;
   background: #0b0b0b;
   padding-bottom: 116px;
+  overflow-x: clip;
 }
 
 .allDiagram {
-  /* position: relative;*/
   margin: 0 auto;
   height: auto;
   display: grid;
@@ -13,18 +14,14 @@
   align-items: start;
   justify-content: space-between;
   width: 100%;
+  z-index: 1;
 }
 
 .allCenter {
-  /*background: url('@/shared/assets/icons/diagram.svg') calc(50% - 72px) top /
-    contain no-repeat;*/
   width: auto;
   height: 100%;
   display: flex;
   justify-content: center;
-  /*left: 50%;
-  top: 50%;*/
-  /*transform: translate(-50%, -50%);*/
   pointer-events: none;
 }
 
@@ -34,12 +31,9 @@
 }
 
 .leftList {
-  /*position: absolute;*/
   display: flex;
   flex-direction: column;
   gap: 96px;
-
-  /*transform: translateY(-50%);*/
   color: #fff;
   min-width: 136px;
   z-index: 50;
@@ -53,9 +47,6 @@
     transform: translateX(5px);
   }
 
-  li:nth-child(3) {
-  }
-
   li:nth-child(4) {
     margin-top: 34px;
   }
@@ -66,12 +57,10 @@
 }
 
 .rightList {
-  /*position: absolute;*/
   display: flex;
   flex-direction: column;
   gap: 96px;
   margin-top: 96px;
-  /*transform: translateY(-50%);*/
   color: #fff;
   min-width: 210px;
   z-index: 50;
@@ -82,9 +71,6 @@
 
   li:hover {
     transform: translateX(5px);
-  }
-
-  li:nth-child(2) {
   }
 
   li:nth-child(3) {
@@ -136,6 +122,33 @@
 
 .itemText:hover::after {
   width: 100%;
+}
+
+.allEllipseUp {
+  position: absolute;
+  width: 2415px;
+  height: 400px;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.18;
+  background: #6162fd;
+  filter: blur(300px);
+  z-index: 0;
+}
+
+.allEllipseDown {
+  position: absolute;
+  width: 633px;
+  height: 734px;
+  bottom: -350px;
+  border-radius: 50%;
+  right: -300px;
+  opacity: 0.36;
+  background: #6162fd;
+  filter: blur(300px);
+  z-index: 0;
 }
 
 @media (max-width: 1430px) {
@@ -246,6 +259,10 @@
 }
 
 @media (max-width: 930px) {
+  .allInOne {
+    position: relative;
+    padding-inline: 1rem;
+  }
   .allCenter {
     display: none;
   }
@@ -307,6 +324,11 @@
 
   .itemNumber {
     display: block;
+  }
+
+  .allEllipseUp {
+    display: block;
+    position: absolute;
   }
 }
 

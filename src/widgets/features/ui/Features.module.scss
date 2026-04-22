@@ -3,6 +3,7 @@
   position: relative;
   background: #0b0b0b;
   width: 100%;
+  overflow-x: clip;
 }
 
 .featuresWrapper {
@@ -16,7 +17,6 @@
 .featuresCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
   height: auto;
   background: #1e1d22;
@@ -30,7 +30,7 @@
   align-items: center;
   background: #141414;
   width: 100%;
-  height: 271px;
+  min-height: 271px;
   opacity: 0.86;
   border-radius: 22px;
   padding-inline: 3.25rem;
@@ -88,13 +88,27 @@
 }
 
 @media (max-width: 768px) {
+  .features {
+    padding-inline: 1rem;
+    text-align: center;
+  }
+
   .featuresWrapper {
     display: grid;
     grid-template-columns: 1fr;
   }
 
+  .featuresCard {
+    background: transparent;
+  }
+
   .cardWindow {
-    height: auto;
-    padding-block: 3.25rem;
+    border: 5px solid #1d1d1f;
+    border-radius: 12px;
+  }
+
+  .textWrapper {
+    align-items: center;
+    text-align: center;
   }
 }

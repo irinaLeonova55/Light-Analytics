@@ -8,7 +8,7 @@ import heroFoto1 from '@/shared/assets/images/hero-foto-1.png';
 import heroFoto2 from '@/shared/assets/images/hero-foto-2.png';
 import heroFoto3 from '@/shared/assets/images/hero-foto-3.png';
 import heroIcon from '@/shared/assets/icons/hero-icon.svg';
-import mockup from '@/shared/assets/images/mockup.png';
+import mockup from '@/shared/assets/images/mockup.webp';
 
 const Hero = ({ setIsModalOpen }) => {
   const heroRef = useRef(null);
@@ -42,7 +42,7 @@ const Hero = ({ setIsModalOpen }) => {
         <Container size="hero">
           <div className={styles.heroContent}>
             <div className={styles.heroBanner}>
-              <div>
+              <div className={styles.heroFotoContainer}>
                 {users.map((user) => (
                   <img
                     key={user.id}
@@ -78,7 +78,7 @@ const Hero = ({ setIsModalOpen }) => {
               <Button
                 variant="transparent"
                 text="Записаться на демо-встречу"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsModalOpen}
               />
             </div>
             <div className={styles.stickyWrapper}>

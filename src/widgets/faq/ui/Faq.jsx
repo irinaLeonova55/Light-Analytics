@@ -5,7 +5,7 @@ import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 
 const Faq = () => {
-  const [faqOpen, setFaqOpen] = useState(null);
+  const [faqOpen, setFaqOpen] = useState(1);
 
   const questions = [
     {

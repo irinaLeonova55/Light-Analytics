@@ -2,6 +2,7 @@
   background: #0b0b0b;
   padding-top: 4rem;
   padding-inline: 0.5rem;
+  overflow-x: clip;
 }
 
 .faqWrapper {
@@ -69,7 +70,7 @@
 .faqItem {
   border-radius: 16px;
   overflow: hidden;
-  background: #2c2c2c;
+  background: #f7f9fb0f;
 }
 
 .activItem {

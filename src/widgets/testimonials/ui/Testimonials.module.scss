@@ -1,3 +1,7 @@
+.testimonials {
+  background: #f8f9fb;
+}
+
 .reviews {
   display: flex;
   gap: 60px;
@@ -147,6 +151,10 @@
 }
 
 @media (max-width: 768px) {
+  .testimonials {
+    padding-inline: 1rem;
+  }
+
   .reviewCard {
     flex-direction: column-reverse;
     width: 100%;

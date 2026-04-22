@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Solutions.module.scss';
 import Container from '@/shared/ui/Container/Container';
 
-import integrationImg from '@/shared/assets/images/integration.png';
-import accuracyImg from '@/shared/assets/images/accuracy.png';
-import profitImg from '@/shared/assets/images/profit.png';
-import balanceImg from '@/shared/assets/images/balance.png';
-import costsImg from '@/shared/assets/images/costs.png';
-import metricsImg from '@/shared/assets/images/metric-card.png';
-import resultsImg from '@/shared/assets/images/results.png';
-import controlImg from '@/shared/assets/images/control.png';
+import integrationImg from '@/shared/assets/images/integration.webp';
+import accuracyImg from '@/shared/assets/images/accuracy.webp';
+import profitImg from '@/shared/assets/images/profit.webp';
+import balanceImg from '@/shared/assets/images/balance.webp';
+import costsImg from '@/shared/assets/images/costs.webp';
+import metricsImg from '@/shared/assets/images/metric-card.webp';
+import resultsImg from '@/shared/assets/images/results.webp';
+import controlImg from '@/shared/assets/images/control.webp';
 
 import integrationIcon from '@/shared/assets/icons/solution-integration.svg';
 import dataIcon from '@/shared/assets/icons/solutions-data.svg';
@@ -146,7 +146,7 @@ const Solutions = () => {
                 >
                   <button
                     onClick={() => setTabOpen(active ? null : tab.id)}
-                    className={`${styles.solution} ${active ? styles.activItem : ''}`}
+                    className={`${styles.solution}  ${active ? styles.activBtn : ''}`}
                   >
                     {tab.text}
                     <span

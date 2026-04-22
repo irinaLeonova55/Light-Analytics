@@ -4,7 +4,7 @@ import styles from './Marketplaces.module.scss';
 import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 
-import marketplacesImg from '@/shared/assets/images/marketplaces-image.png';
+import marketplacesImg from '@/shared/assets/images/marketplaces-image.webp';
 
 const Marketplaces = () => {
   const steps = [
@@ -55,7 +55,7 @@ const Marketplaces = () => {
   };
 
   return (
-    <section className="marketplaces">
+    <section className={styles.marketplaces}>
       <div className={styles.marketplacesWrapper}>
         <Container size="cards">
           <div>

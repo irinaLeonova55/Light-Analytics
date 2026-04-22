@@ -35,7 +35,7 @@ const Burger = ({ setIsBurger, isBurger }) => {
               href="https://lightanalytics.ru/reg"
             />
             <Button
-              variant="largeWhite"
+              variant="transparent"
               text="Войти"
               href="https://lightanalytics.ru/login"
             />

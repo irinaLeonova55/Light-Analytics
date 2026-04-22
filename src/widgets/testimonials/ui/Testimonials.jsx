@@ -59,7 +59,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section>
+    <section className={styles.testimonials}>
       <Container size="cards">
         <Headline align="center" supertitle="Отзывы" title="Отзывы" light />
         <div className={styles.reviews}>

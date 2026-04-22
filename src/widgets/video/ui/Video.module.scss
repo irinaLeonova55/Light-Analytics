@@ -2,6 +2,7 @@
   position: relative;
   background: #0b0b0b;
   padding-bottom: 11rem;
+  overflow-x: clip;
 }
 
 .videoBlurRight {
@@ -15,7 +16,7 @@
   transform: translateX(400px);
   opacity: 0.3;
   filter: blur(300px);
-  z-index: 2;
+  z-index: 1;
 }
 
 .videoBlurLeft {
@@ -49,5 +50,17 @@
 @media (max-width: 768px) {
   .videoSection {
     padding-bottom: 5rem;
+  }
+
+  .videoBlurRight {
+    width: 226px;
+    height: 263px;
+    bottom: -50px;
+    border-radius: 50%;
+    left: 0;
+    transform: translateX(-27px);
+    opacity: 0.35;
+    filter: blur(100px);
+    z-index: 2;
   }
 }

@@ -1,6 +1,7 @@
 .metrics {
   position: relative;
   background: #0b0b0b;
+  overflow-x: clip;
 }
 
 .metricsWrapper {
@@ -33,7 +34,7 @@
 }
 
 .cardWhite {
-  background: rgba(#ffffff, 0.1);
+  background: #ffffff0f;
 }
 
 .cardBlue {
@@ -67,13 +68,24 @@
   right: 0;
   transform: translateX(250px);
   opacity: 0.8;
-  filter: blur(300px);
+  filter: blur(400px);
   z-index: 2;
 }
 
 @media (max-width: 1024px) {
   .metricsWrapper {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics {
+    padding-inline: 1rem;
+  }
+
+  .metricCard {
+    height: 210px;
+    z-index: 5;
   }
 }
 

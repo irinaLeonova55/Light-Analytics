@@ -5,10 +5,10 @@ import Container from '@/shared/ui/Container/Container';
 import Headline from '@/shared/ui/Headline/Headline';
 
 import sellersArrow from '@/shared/assets/icons/sellers-arrow.svg';
-import sellersBgUp from '@/shared/assets/images/sellers-bg-up.png';
-import sellersFigure from '@/shared/assets/images/sellers-figure.png';
-import sellersBgDown from '@/shared/assets/images/sellers-bg-down.png';
-import sellersTriangle from '@/shared/assets/images/sellers-triangle.png';
+import sellersBgUp from '@/shared/assets/images/sellers-bg-up.webp';
+import sellersFigure from '@/shared/assets/images/sellers-figure.webp';
+import sellersBgDown from '@/shared/assets/images/sellers-bg-down.webp';
+import sellersTriangle from '@/shared/assets/images/sellers-triangle.webp';
 
 const Sellers = () => {
   const advantages = [
