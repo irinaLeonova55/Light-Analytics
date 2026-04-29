@@ -1,6 +1,6 @@
-//const BASE_URL = 'https://lightanalytics.ru/api-v2/promo/command';
 
-const BASE_URL = 'http://localhost:8855/api-v2/promo/command';
+const API_ROOT = import.meta.env.VITE_API_URL;
+const BASE_URL = `${API_ROOT}/api-v2/promo/command`;
 
 /**
  * Модель запроса: CreateDemoRequestWebRequest
