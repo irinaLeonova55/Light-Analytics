@@ -59,12 +59,12 @@ const Footer = () => {
                 <Button
                   variant="largePurple"
                   text="Создать аккаунт"
-                  href="https://lightanalytics.ru/login"
+                  href="https://lightanalytics.ru/reg"
                 />
                 <Button
                   variant="largeWhite"
                   text="Войти"
-                  href="https://lightanalytics.ru/reg"
+                  href="https://lightanalytics.ru/login"
                 />
               </div>
               <div className={styles.socialWrapperMobile}>

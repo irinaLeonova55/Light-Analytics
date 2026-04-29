@@ -78,7 +78,7 @@ const Hero = ({ setIsModalOpen }) => {
               <Button
                 variant="transparent"
                 text="Записаться на демо-встречу"
-                onClick={() => setIsModalOpen}
+                onClick={() => setIsModalOpen(true)}
               />
             </div>
             <div className={styles.stickyWrapper}>
