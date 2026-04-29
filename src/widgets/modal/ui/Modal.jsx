@@ -1,13 +1,19 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import styles from './Modal.module.scss';
 import {useDemoRequest} from "@/widgets/modal/hook/useDemoRequest.js";
 
 const Modal = ({isOpen, onClose}) => {
     const {sendRequest, isLoading, isSuccess, error, reset} = useDemoRequest();
+    const [submittedEmail, setSubmittedEmail] = useState('');
+    const [submittedName, setSubmittedName] = useState(''); // Состояние для имени
 
     useEffect(() => {
         if (!isOpen) {
-            const timer = setTimeout(reset, 300);
+            const timer = setTimeout(() => {
+                reset();
+                setSubmittedEmail('');
+                setSubmittedName(''); // Очищаем имя при закрытии
+            }, 300);
             return () => clearTimeout(timer);
         }
 
@@ -28,7 +34,16 @@ const Modal = ({isOpen, onClose}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        sendRequest(new FormData(e.currentTarget));
+        const formData = new FormData(e.currentTarget);
+
+        // Извлекаем имя до первого пробела
+        const fullName = formData.get('name') || '';
+        const firstName = fullName.trim().split(' ')[0];
+
+        setSubmittedName(firstName);
+        setSubmittedEmail(formData.get('email'));
+
+        sendRequest(formData);
     };
 
     return (
@@ -50,9 +65,14 @@ const Modal = ({isOpen, onClose}) => {
                                 <path className={styles.checkmarkCheck} fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                             </svg>
                         </div>
-                        <h2 className={styles.modalTitle}>Заявка принята!</h2>
-                        <p className={styles.modalSubtitle}>Мы получили Вашу заявку и уже готовимся к встрече. Проверьте
-                            почту — там Вас ждет приветственное письмо.</p>
+                        {/* Выводим имя с большой буквы, если оно есть */}
+                        <h2 className={styles.modalTitle}>
+                            {submittedName ? `${submittedName}, заявка принята!` : 'Заявка принята!'}
+                        </h2>
+                        <p className={styles.modalSubtitle}>
+                            Мы получили Вашу заявку и уже готовимся к встрече.
+                            Проверьте почту <strong>{submittedEmail}</strong> — там Вас ждет приветственное письмо.
+                        </p>
                         <button className={styles.submitBtn} onClick={onClose}>Закрыть</button>
                     </div>
                 ) : (
