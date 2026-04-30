@@ -13,7 +13,7 @@ const Header = ({ setIsBurger }) => {
           <div className={styles.headerContainer}>
             {/* 1. Логотип теперь первый */}
             <div className={styles.logoHeader}>
-              <a href="/">
+              <a href="/promo/">
                 <img src={logoWhite} alt="Light Analytics" />
               </a>
             </div>

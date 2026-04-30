@@ -11,30 +11,40 @@ COPY . .
 RUN npm run build
 
 # --- Stage 2: Runtime (Nginx) ---
-# Nginx гораздо эффективнее для отдачи статики, чем node.js
 FROM nginx:stable-alpine AS runtime
 
-# Настройка таймзоны (как в вашем исходном файле)
+# Настройка таймзоны
 ENV TZ=Europe/Moscow
 RUN apk add --no-cache tzdata && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone
 
-# Копируем собранную статику из папки dist (стандарт Vite)
-# в стандартную директорию Nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+# Переходим в директорию nginx
+WORKDIR /usr/share/nginx/html
 
-# Создаем конфигурацию для корректной работы React-роутинга (SPA)
+# ВАЖНО: Копируем статику из dist в подпапку /promo.
+# Это решает проблему MIME type "text/html", так как пути к ассетам
+# теперь будут начинаться с /promo/assets/... и совпадать с файловой системой.
+COPY --from=build /app/dist ./promo
+
+# Создаем конфигурацию Nginx для работы внутри контейнера.
+# 1. Слушаем порт 3000.
+# 2. Обрабатываем запросы в location /promo/.
+# 3. try_files обеспечивает работу SPA-роутинга (fallback на index.html).
 RUN echo 'server { \
     listen 3000; \
-    location / { \
-        root /usr/share/nginx/html; \
-        index index.html index.htm; \
-        try_files $uri $uri/ /index.html; \
+    root /usr/share/nginx/html; \
+    location /promo/ { \
+        index index.html; \
+        try_files $uri $uri/ /promo/index.html; \
+    } \
+    # Редирект с корня контейнера на /promo/ для стабильности \
+    location = / { \
+        return 301 /promo/; \
     } \
 }' > /etc/nginx/conf.d/default.conf
 
-# Сервис будет работать на порту 3000
+# Сервис внутри контейнера работает на порту 3000
 EXPOSE 3000
 
 CMD ["nginx", "-g", "daemon off;"]

@@ -4,8 +4,13 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Устанавливаем относительные пути для корректной работы в Docker/Nginx
-  base: './',
+  /**
+   * Ключевое изменение: Устанавливаем базовый путь '/promo/'.
+   * Теперь Vite будет генерировать пути к скриптам как /promo/assets/...
+   * и Nginx сможет правильно перенаправлять эти запросы на порт 3001.
+   */
+  base: '/promo/',
+
   plugins: [react()],
   resolve: {
     alias: {
@@ -17,6 +22,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // Автоматическое подключение глобальных переменных в каждый компонент
+        // Используем современный синтаксис Dart Sass
         additionalData: `@use "@/app/styles/variables.scss" as *;`,
       },
     },
@@ -25,5 +31,12 @@ export default defineConfig({
     // Гарантируем, что билд будет чистым и предсказуемым
     outDir: 'dist',
     emptyOutDir: true,
+    // Убираем хеширование имен файлов, если нужно более простое управление в Nginx,
+    // но для продакшена лучше оставить стандартные настройки (с хешами).
   },
+  server: {
+    // Настройки для локальной разработки, чтобы порт совпадал с тем, что ждет Nginx
+    port: 3001,
+    strictPort: true,
+  }
 });

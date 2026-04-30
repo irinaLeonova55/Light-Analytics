@@ -27,8 +27,8 @@ const Footer = () => {
             id: 2,
             title: 'Документы',
             links: [
-                { name: 'Публичная оферта', href: '/public-offer', isInternal: true },
-                { name: 'Политика конфиденциальности', href: '/privacy', isInternal: true },
+                { name: 'Публичная оферта', href: '/promo/public-offer', isInternal: true },
+                { name: 'Политика конфиденциальности', href: '/promo/privacy', isInternal: true },
             ],
         },
         {
