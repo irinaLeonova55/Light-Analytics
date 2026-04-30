@@ -66,103 +66,107 @@ const Signup = ({ setIsModalOpen }) => {
   ];
 
   return (
-    <section ref={signupRef} id="signup" className={styles.signup}>
-      <Container size="signup">
-        <Headline
-          supertitle="План подключения"
-          title="Создайте аккаунт и получите доступ к сервису в этот же день"
-        />
-        <div
-          className={styles.signupWrapper}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          variants={{
-            hidden: { opacity: 0, y: 60 },
-            show: { opacity: 1, y: 0 },
-          }}
-        >
-          <div className={styles.timelineLine}>
-            <motion.div
-              className={styles.timelineProgress}
-              style={{ height }}
-            ></motion.div>
-          </div>
+      <section ref={signupRef} id="signup" className={styles.signup}>
+        <Container size="signup">
+          <Headline
+              supertitle="План подключения"
+              title="Создайте аккаунт и получите доступ к сервису в этот же день"
+          />
 
-          {steps.map((step, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.2,
+          {/* ИСПРАВЛЕНИЕ: изменили div на motion.div, чтобы React понимал motion-пропсы */}
+          <motion.div
+              className={styles.signupWrapper}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0, y: 60 },
+                show: { opacity: 1, y: 0 },
               }}
-              viewport={{ once: true, margin: '-150px' }}
-              className={`${styles.signupStep} ${index % 2 !== 0 ? styles.reverse : ''}`}
-            >
-              <div
-                key={step.id}
-                className={`${styles.signupImgSide} ${index % 2 !== 0 ? styles.rightImg : ''}`}
-              >
-                <div className={styles.signupImg}>
-                  <div className={styles.imgHeader}>
-                    <svg
-                      width="24"
-                      height="6"
-                      viewBox="0 0 24 6"
-                      fill="none"
-                      xmlns="http://w3.org"
-                    >
-                      <circle cx="3" cy="3" r="3" fill="white" />
-                      <circle cx="12" cy="3" r="3" fill="white" />
-                      <circle cx="21" cy="3" r="3" fill="white" />
-                    </svg>
-                  </div>
-                  <img
-                    src={step.bg}
-                    alt="Фон"
-                    className={styles.signupStepBg}
-                  />
-                  <img
-                    src={step.img}
-                    alt={step.title}
-                    className={styles.signupStepImg}
-                  />
-                </div>
-              </div>
-              <div
-                className={`${styles.signupTextSide} ${index % 2 !== 0 ? styles.borderRight : styles.borderLeft}`}
-              >
-                <div className={styles.signupText}>
-                  <span className={styles.signupStepNumber}>0{step.id}</span>
-                  <h4
-                    className={`${index % 2 !== 0 ? styles.after : styles.before}`}
+          >
+            <div className={styles.timelineLine}>
+              <motion.div
+                  className={styles.timelineProgress}
+                  style={{ height }}
+              ></motion.div>
+            </div>
+
+            {steps.map((step, index) => (
+                /* ИСПРАВЛЕНИЕ: перенесли key на самый верхний элемент итерации (motion.div) */
+                <motion.div
+                    key={step.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.2,
+                    }}
+                    viewport={{ once: true, margin: '-150px' }}
+                    className={`${styles.signupStep} ${index % 2 !== 0 ? styles.reverse : ''}`}
+                >
+                  <div
+                      className={`${styles.signupImgSide} ${index % 2 !== 0 ? styles.rightImg : ''}`}
                   >
-                    {step.title}
-                  </h4>
-                  <p>{step.desc}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className={styles.signupBtnWrapper}>
-          <Button
-            variant="largePurple"
-            text="Бесплатный доступ на 14 дней"
-            href="https://lightanalytics.ru/reg"
-          />
-          <Button
-            variant="transparent"
-            text="Записаться на демо-встречу"
-            onClick={() => setIsModalOpen(true)}
-          />
-        </div>
-      </Container>
-      <div className={styles.sighupEllipseUp} />
-      <div className={styles.sighupEllipseRight} />
-      <div className={styles.sighupEllipseDown} />
-    </section>
+                    <div className={styles.signupImg}>
+                      <div className={styles.imgHeader}>
+                        <svg
+                            width="24"
+                            height="6"
+                            viewBox="0 0 24 6"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle cx="3" cy="3" r="3" fill="white" />
+                          <circle cx="12" cy="3" r="3" fill="white" />
+                          <circle cx="21" cy="3" r="3" fill="white" />
+                        </svg>
+                      </div>
+                      <img
+                          src={step.bg}
+                          alt="Фон"
+                          className={styles.signupStepBg}
+                      />
+                      <img
+                          src={step.img}
+                          alt={step.title}
+                          className={styles.signupStepImg}
+                      />
+                    </div>
+                  </div>
+                  <div
+                      className={`${styles.signupTextSide} ${index % 2 !== 0 ? styles.borderRight : styles.borderLeft}`}
+                  >
+                    <div className={styles.signupText}>
+                      <span className={styles.signupStepNumber}>0{step.id}</span>
+                      <h4
+                          className={`${index % 2 !== 0 ? styles.after : styles.before}`}
+                      >
+                        {step.title}
+                      </h4>
+                      <p>{step.desc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+            ))}
+          </motion.div>
+
+          <div className={styles.signupBtnWrapper}>
+            <Button
+                variant="largePurple"
+                text="Бесплатный доступ на 14 дней"
+                href="https://lightanalytics.ru/reg"
+            />
+            <Button
+                variant="transparent"
+                text="Записаться на демо-встречу"
+                onClick={() => setIsModalOpen(true)}
+            />
+          </div>
+        </Container>
+        <div className={styles.sighupEllipseUp} />
+        <div className={styles.sighupEllipseRight} />
+        <div className={styles.sighupEllipseDown} />
+      </section>
   );
 };
 

@@ -1,0 +1,234 @@
+.documentSection {
+  padding-inline: 0.5rem;
+  background: #f5f6fb;
+  width: 100%;
+  padding-top: 8rem; /* Отступ под фиксированный хедер */
+}
+
+.documentWrapper {
+  position: relative; // Для абсолютного позиционирования кнопок возврата
+  margin: 0 auto;
+  background: #ffffff;
+  max-width: 1620px;
+  padding-bottom: 6rem;
+  border-radius: 21px;
+  padding-top: 4rem;
+}
+
+// Стили для брендированной кнопки "Вернуться на сайт"
+.backButton {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  z-index: 10;
+  transition: all 0.3s ease;
+
+  .circle {
+    width: 56px;
+    height: 56px;
+    background-color: #6162FD; // Фирменный цвет
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(97, 98, 253, 0.2);
+
+    span {
+      display: block;
+      line-height: 0;
+      margin-top: -2px;
+    }
+  }
+
+  .backText {
+    font-size: 16px;
+    font-weight: 500;
+    color: #6162FD;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    .circle {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(97, 98, 253, 0.4);
+    }
+    .backText {
+      opacity: 1;
+    }
+  }
+}
+
+.backTop {
+  top: 40px;
+}
+
+.backBottom {
+  bottom: 60px;
+}
+
+.documentHeader {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.5rem;
+}
+
+.documentTitle {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0b0b0b;
+  margin: 0;
+  text-align: left;
+}
+
+.documentContent {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #0b0b0b;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 135%;
+    color: #1a1a1a;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 160%;
+    margin-bottom: 1.25rem;
+    color: #333333;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      font-size: 16px;
+      line-height: 160%;
+      margin-bottom: 0.75rem;
+      color: #333333;
+      text-align: justify;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+    color: #0b0b0b;
+  }
+}
+
+// Специфический блок реквизитов (Раздел 12)
+.requisites {
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: #f9fafc;
+  border-radius: 16px;
+  border: 1px solid #edf0f5;
+
+  p {
+    text-align: left;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: #6162FD;
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Адаптив
+@media (max-width: 1200px) {
+  .backButton {
+    left: 20px;
+    .backText {
+      display: none; // Оставляем только кружок на планшетах
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .documentSection {
+    padding-top: 6rem;
+  }
+
+  .documentWrapper {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-radius: 0; // На мобилках лучше во весь экран
+  }
+
+  .backButton {
+    position: relative;
+    left: 0;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+
+    .circle {
+      width: 48px;
+      height: 48px;
+    }
+
+    .backText {
+      display: block; // Возвращаем текст для мобилок
+      font-size: 14px;
+    }
+  }
+
+  .backBottom {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    bottom: 0;
+  }
+
+  .documentTitle {
+    font-size: 26px;
+  }
+
+  .documentContent {
+    p, li {
+      font-size: 15px;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 2.5rem;
+    }
+  }
+
+  .requisites {
+    padding: 1.5rem;
+  }
+}

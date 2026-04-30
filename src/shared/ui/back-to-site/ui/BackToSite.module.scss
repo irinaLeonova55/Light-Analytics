@@ -1,0 +1,66 @@
+@use "sass:color"; // Добавляем импорт модуля в самое начало
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    background-color: #6162FD;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(97, 98, 253, 0.25);
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .backText {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #6162FD;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    .circle {
+      transform: scale(1.08);
+      // Заменяем lighten(#6162FD, 5%) на современный вариант:
+      background-color: color.adjust(#6162FD, $lightness: 5%);
+      box-shadow: 0 12px 25px rgba(97, 98, 253, 0.4);
+
+      svg {
+        transform: translateX(-3px);
+      }
+    }
+
+    .backText {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .backButton {
+    gap: 12px;
+    .circle {
+      width: 48px;
+      height: 48px;
+      svg { width: 20px; height: 20px; }
+    }
+  }
+}
