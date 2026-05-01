@@ -1,6 +1,7 @@
 .socialIcons {
   display: flex;
-  gap: 3px;
+  // Увеличил отступ, 3px было слишком тесно для кнопок 54px
+  gap: 8px;
 
   a {
     display: flex;
@@ -9,22 +10,37 @@
     width: 54px;
     height: 54px;
     border-radius: 12px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 
+    &:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    // Телеграм
     &:nth-child(1) {
       background: #ffffff;
     }
 
+    // Почта
     &:nth-child(2) {
       background: #6162fd;
     }
 
+    // Max
     &:nth-child(3) {
       background: #302d35;
+
+      img {
+        // Увеличиваем конкретно иконку Max
+        width: 28px;
+      }
     }
 
     img {
-      width: 18px;
+      width: 22px; // Немного увеличил базу, 18px маловато для кнопок 54px
       height: auto;
+      object-fit: contain;
     }
   }
 }

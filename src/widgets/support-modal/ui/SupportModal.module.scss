@@ -1,0 +1,134 @@
+// Палитра из твоего примера
+$slate-900: #0f172a;
+$slate-700: #334155;
+$slate-600: #475569;
+$slate-200: #e2e8f0;
+$slate-50: #f8fafc;
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contentSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  // Используем top/left/width/height для максимальной совместимости
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+
+  // Центрирование контента
+  display: flex;
+  align-items: center; // Центр по вертикали
+  justify-content: center; // Центр по горизонтали
+
+  z-index: 2000; // Выше хедера и всего остального
+  padding: 20px;
+  animation: overlayFadeIn 0.25s ease-out forwards;
+}
+
+.modalContent {
+  background: #ffffff;
+  padding: 48px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: contentSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    padding: 40px 24px 32px 24px;
+    border-radius: 20px;
+    // На мобилках тоже оставляем по центру, если не хочешь прижимать к низу
+    margin-bottom: 0;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: $slate-50;
+  color: $slate-600;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $slate-200;
+    color: $slate-900;
+  }
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.modalTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: $slate-900;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.modalSubtitle {
+  font-size: 15px;
+  color: $slate-600;
+  line-height: 1.6;
+}
+
+.socialWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  // Убедимся, что внутри Social есть отступы
+  :global(.socialIcons) {
+    gap: 12px;
+  }
+}
+
+.closeBtn {
+  width: 100%;
+  padding: 16px;
+  background: $slate-900;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $slate-700;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

@@ -28,6 +28,7 @@ footer {
     height: auto;
   }
 }
+
 .footerBtnWrapper {
   display: flex;
   flex-direction: column;
@@ -59,27 +60,41 @@ footer {
   color: #ffffff;
   line-height: 197%;
   letter-spacing: -1%;
+  list-style: none;
 
-  & li a {
+  // Общий стиль для ссылок и кнопки Поддержка
+  .link {
     position: relative;
     color: #ffffff;
     opacity: 0.6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    // Сброс стилей для <button>
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-flex;
+    align-items: center;
 
     &::after {
       content: '';
       position: absolute;
       left: 0;
       bottom: -4px;
-
       width: 0;
       height: 1px;
       background: #6162fd;
-
       transition: width 0.3s ease;
     }
 
     &:hover {
       color: #6162fd;
+      opacity: 1;
 
       &::after {
         width: 100%;
@@ -90,6 +105,11 @@ footer {
       color: #6162fd;
       opacity: 0.8;
     }
+  }
+
+  // Поддержка старого синтаксиса li a, если он используется
+  li a {
+    @extend .link;
   }
 }
 
@@ -103,6 +123,12 @@ footer {
   border-radius: 12px;
   border: 1px solid #ffffff;
   background: transparent;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .footerDown {
@@ -111,15 +137,13 @@ footer {
   align-items: center;
   margin-top: 80px;
 
-  span {
+  .year {
     font-size: 14px;
     letter-spacing: -1%;
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-decoration-thickness: 4.5%;
-    text-decoration-skip-ink: auto;
     color: #ffffff;
     opacity: 0.6;
+    // Убрал подчеркивание с копирайта, если оно там не нужно по дизайну
+    text-decoration: none;
   }
 }
 
@@ -137,6 +161,8 @@ footer {
   text-align: right;
 }
 
+// --- Media Queries ---
+
 @media (max-width: 1000px) {
   .footerUp {
     grid-template-columns: 1fr;
@@ -148,7 +174,6 @@ footer {
   }
 
   .footerLinks {
-    display: grid;
     grid-template-columns: 2fr 3fr 2fr;
   }
 }
@@ -178,6 +203,7 @@ footer {
 
   .footerDown {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .policy {

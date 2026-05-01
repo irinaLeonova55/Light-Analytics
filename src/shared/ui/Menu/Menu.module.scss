@@ -18,16 +18,25 @@ $transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   li {
     position: relative;
 
-    a, .dropdownTitle {
+    // Добавляем .supportBtn в список стилизации
+    a, .dropdownTitle, .supportBtn {
       position: relative;
       color: rgba($text-white, 0.6);
-      font-weight: 400; // замена $fw-regular, если переменной нет
+      font-weight: 400;
       text-decoration: none;
       transition: $transition-smooth;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 6px;
+
+
+      // Сброс стилей кнопки
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: inherit;
 
       &::after {
         content: '';

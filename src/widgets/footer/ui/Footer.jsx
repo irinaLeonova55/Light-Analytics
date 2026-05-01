@@ -9,19 +9,25 @@ import {Link, useLocation} from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import logoGradient from '@/shared/assets/icons/logo-gradient.svg';
+import SupportModal from "@/widgets/support-modal/ui/SupportModal.jsx";
+import {useState} from "react";
 
 const Footer = () => {
     const location = useLocation();
+    const [isSupportOpen, setIsSupportOpen] = useState(false); // Состояние для модалки
 
-    // Определяем, находимся ли мы на главной/промо
     const isHome = location.pathname === '/' || location.pathname === '/promo';
 
     const footerLinks = [
         {
             id: 1,
             title: 'Навигация',
-            links: navLinks,
-            isNav: true, // Флаг для использования HashLink
+            // Добавляем пункт Поддержка в конец списка навигации
+            links: [
+                ...navLinks,
+                { name: 'Поддержка', isSupport: true }
+            ],
+            isNav: true,
         },
         {
             id: 2,
@@ -29,6 +35,8 @@ const Footer = () => {
             links: [
                 { name: 'Публичная оферта', href: '/promo/public-offer', isInternal: true },
                 { name: 'Политика конфиденциальности', href: '/promo/privacy', isInternal: true },
+                { name: 'Использование cookie', href: '/promo/cookie', isInternal: true },
+                { name: 'Правила техподдержки', href: '/promo/tech-support-policy', isInternal: true },
             ],
         },
         {
@@ -36,13 +44,13 @@ const Footer = () => {
             title: 'Реквизиты',
             isText: true,
             links: [
-                { name: 'ИП Мигушев Никита Николаевич' }, //
-                { name: 'ОГРНИП 324774600786201' }, //
-                { name: 'ИНН 860318721702' }, //
-                { name: 'АО КБ "МОДУЛЬБАНК"' }, //
-                { name: 'БИК 044525092' }, //
-                { name: 'К/с 30101810645250000092' }, //
-                { name: 'Счёт 40802810070010477433' }, //
+                { name: 'ИП Мигушев Никита Николаевич' },
+                { name: 'ОГРНИП 324774600786201' },
+                { name: 'ИНН 860318721702' },
+                { name: 'АО КБ "МОДУЛЬБАНК"' },
+                { name: 'БИК 044525092' },
+                { name: 'К/с 30101810645250000092' },
+                { name: 'Счёт 40802810070010477433' },
             ],
         },
         {
@@ -50,7 +58,7 @@ const Footer = () => {
             title: 'Контакты:',
             links: [
                 {
-                    name: 'hello@lightanalytics.ru', //
+                    name: 'hello@lightanalytics.ru',
                     href: 'mailto:hello@lightanalytics.ru',
                 },
             ],
@@ -91,7 +99,6 @@ const Footer = () => {
                                     <h4 className={styles.title}>{column.title}</h4>
                                     <ul className={styles.footerList}>
                                         {column.links.map((link, index) => {
-                                            // Логика для текстовых реквизитов
                                             if (column.isText) {
                                                 return (
                                                     <li key={index}>
@@ -102,7 +109,21 @@ const Footer = () => {
                                                 );
                                             }
 
-                                            // Логика для навигации по секциям (Функции, Тарифы и т.д.)
+                                            // ОБРАБОТКА ПОДДЕРЖКИ
+                                            if (link.isSupport) {
+                                                return (
+                                                    <li key={index}>
+                                                        <button
+                                                            className={styles.link}
+                                                            onClick={() => setIsSupportOpen(true)}
+                                                            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', font: 'inherit' }}
+                                                        >
+                                                            {link.name}
+                                                        </button>
+                                                    </li>
+                                                );
+                                            }
+
                                             if (column.isNav) {
                                                 const targetPath = isHome
                                                     ? link.href.replace(/^\/[^#]*/, '')
@@ -125,7 +146,6 @@ const Footer = () => {
                                                 );
                                             }
 
-                                            // Логика для внутренних страниц (Оферта, Политика)
                                             if (link.isInternal) {
                                                 return (
                                                     <li key={index}>
@@ -136,7 +156,6 @@ const Footer = () => {
                                                 );
                                             }
 
-                                            // По умолчанию (Email и прочее)
                                             return (
                                                 <li key={index}>
                                                     <a href={link.href || '#'} className={styles.link}>
@@ -165,6 +184,12 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
+
+            {/* Рендерим модалку. Благодаря порталу она будет в корне body */}
+            <SupportModal
+                isOpen={isSupportOpen}
+                onClose={() => setIsSupportOpen(false)}
+            />
         </footer>
     );
 };

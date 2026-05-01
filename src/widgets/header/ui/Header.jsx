@@ -5,13 +5,18 @@ import Menu from '@/shared/ui/Menu/Menu';
 
 import logoWhite from '@/shared/assets/icons/logo-gradient.svg';
 import burger from '@/shared/assets/icons/burger.svg';
+import {useState} from "react";
+import SupportModal from "@/widgets/support-modal/ui/SupportModal.jsx";
 
 const Header = ({ setIsBurger }) => {
+  // Состояние для управления модальным окном поддержки
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
+
   return (
       <header className={styles.header}>
         <Container size="default">
           <div className={styles.headerContainer}>
-            {/* 1. Логотип теперь первый */}
+            {/* 1. Логотип */}
             <div className={styles.logoHeader}>
               <a href="/promo/">
                 <img src={logoWhite} alt="Light Analytics" />
@@ -20,7 +25,10 @@ const Header = ({ setIsBurger }) => {
 
             {/* 2. Меню в центре */}
             <div className={styles.menuWrapper}>
-              <Menu section="menuHeader" />
+              <Menu
+                  section="menuHeader"
+                  onSupportClick={() => setIsSupportOpen(true)}
+              />
             </div>
 
             {/* 3. Кнопки справа */}
@@ -44,6 +52,12 @@ const Header = ({ setIsBurger }) => {
             </div>
           </div>
         </Container>
+
+        {/* Модальное окно поддержки */}
+        <SupportModal
+            isOpen={isSupportOpen}
+            onClose={() => setIsSupportOpen(false)}
+        />
       </header>
   );
 };
